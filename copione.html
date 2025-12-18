@@ -1,0 +1,3121 @@
+    <!doctype html>
+    <html lang="it">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Copione — Progetto Teatro</title>
+      <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+      <meta name="description" content="Progetto teatrale scuola - sito ufficiale">
+      <style>
+:root{
+  --bg:#0f0f12;
+  --card:#fff;
+  --accent:#b52324;
+  --muted:#bdbdbd;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#0c0c0f 0%, #101217 60%); color:var(--card); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+.container{max-width:1100px;margin:32px auto;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;backdrop-filter: blur(4px);}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6b0f12);display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 18px rgba(181,35,36,0.16)}
+.brand h1{font-size:1.3rem;color:var(--card)}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+.nav a:hover{color:var(--card);background:var(--glass)}
+
+.hamburger{display:none;background:none;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--card)}
+
+/* hero */
+.hero{padding:56px 24px;border-radius:12px;margin:18px 0;background:linear-gradient(180deg, rgba(181,35,36,0.12), rgba(0,0,0,0.18));box-shadow:0 8px 30px rgba(0,0,0,0.45);text-align:center;}
+.hero h2{font-size:2.2rem;margin-bottom:8px}
+.hero p{color:var(--muted);max-width:820px;margin:0 auto;line-height:1.6}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:transform .25s ease, box-shadow .25s ease;cursor:pointer;border:1px solid rgba(255,255,255,0.03)}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.card h3{color:var(--accent);margin-bottom:8px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;display:block;}
+
+/* footer */
+footer{padding:28px;text-align:center;color:var(--muted);margin-top:30px;border-top:1px solid rgba(255,255,255,0.02)}
+
+/* cards inside content */
+.content h2{color:var(--card);margin-bottom:12px}
+.content p, .content li{color:var(--muted);line-height:1.6}
+
+/* responsive navigation */
+@media (max-width:880px){
+  .nav{display:none}
+  .hamburger{display:block}
+  .mobile-menu{display:none;position:absolute;right:18px;top:72px;background:linear-gradient(180deg, rgba(15,15,18,0.98), rgba(20,20,25,0.98));border-radius:10px;padding:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6);}
+  .mobile-menu a{display:block;padding:10px;color:var(--muted);text-decoration:none;border-radius:8px}
+  .mobile-menu a:hover{color:var(--card);background:var(--glass)}
+}
+
+/* subtle fade-in animations */
+.fade-up{opacity:0;transform:translateY(10px);animation:fadeUp .6s forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* small helpers */
+.kv{display:flex;gap:10px;align-items:center;color:var(--muted);font-weight:600}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:700;margin-top:8px}
+.badge{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700}
+</style>
+    </head>
+    <body>
+      <header class="header container" role="banner">
+        <div class="brand">
+          <div class="logo">PT</div>
+          <h1>Progetto Teatro</h1>
+        </div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="copione.html">Copione</a>
+          <a href="musiche.html">Musiche</a>
+          <a href="personaggi.html">Personaggi</a>
+          <a href="calendario.html">Calendario</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="materiali.html">Materiali</a>
+          <a href="contatti.html">Contatti</a>
+        </nav>
+        <button id="hamb" class="hamburger" aria-label="Apri menu">☰</button>
+        <div id="mobileMenu" class="mobile-menu" style="display:none">
+          <a href="index.html">Home</a>
+          <a href="copione.html">Copione</a>
+          <a href="musiche.html">Musiche</a>
+          <a href="personaggi.html">Personaggi</a>
+          <a href="calendario.html">Calendario</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="materiali.html">Materiali</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </header>
+<section id="copione-filtrato" style="margin-top:50px;">
+    <h2>Copione🎬</h2>
+    <p>Filtra il copione in base al personaggio:</p>
+
+    <select id="personaggioSelect" style="
+        padding:10px;
+        border-radius:10px;
+        font-size:1rem;
+        border:2px solid #7abaff;
+        margin-bottom:20px;">
+        <option value="Copione completo">Copione completo</option>
+        <option value="Frate Sole">Frate Sole</option>
+        <option value="Sora Luna">Sora Luna</option>
+        <option value="Sorelle Stelle">Sorelle Stelle</option>
+        <option value="Sorella Vento">Sorella Vento</option>
+	 <option value="Frate Fuoco">Frate Fuoco</option>
+	 <option value="Sora Acqua">Sora Acqua</option>
+	 <option value="Sora Madre Terra">Sora Madre Terra</option>
+	 <option value="Il Lupo (spacciatore)">Il Lupo (spacciatore)</option>
+	<option value="Sorella Morte Corporale">Sorella Morte Corporale</option>
+	<option value="Il Diavolo">Il Diavolo</option>
+	<option value="Sorella Povertà">Sorella Povertà</option>
+	
+
+    </select>
+
+<div class="battuta" data-personaggio="Copione completo"><p><strong>INTRODUZIONE:</strong></p>
+<p><em>(Luci basse. Sul palco un coro di studenti sparsi, ognuno con un cellulare acceso. Notifiche, vibrazioni, suoni. Il palco è rumoroso, frenetico.)</em><br>
+Brano 1(sottofondo)The Social Network OST – Hand Covers Bruise</p>
+
+<p><strong>VOCE NARRANTE</strong> (voce ferma): Viviamo in un mondo che corre.<br>
+Notifiche<br>
+Scadenze,<br>
+Impegni.<br>
+Connessione continua…<br>
+ma spesso nessun contatto vero.</p>
+
+<p><em>(Gli studenti si muovono freneticamente, ognuno preso dal proprio telefono, dalle proprie “urgenze”.)</em><br>
+Consumiamo cose.<br>
+Consumiamo tempo.</p>
+
+<p><em>(Breve pausa. Una luce singola si accende su un ragazzo al centro. Abiti semplici: jeans, una felpa neutra, magari uno zaino consumato.)</em></p>
+
+<p><strong>VOCE NARRANTE</strong>: A volte… consumiamo anche noi stessi.<br>
+Eppure,<br>
+anche oggi,<br>
+proprio oggi ,<br>
+potrebbe apparire qualcuno capace di camminare controcorrente.<br>
+Non un eroe. Non un influencer. Non un predicatore perfetto.<br>
+(lento) Ma un uomo… stropicciato, vulnerabile, appassionato.<br>
+<em>(lentamente si spengono i telefoni. Rumori digitali si affievoliscono.)</em></p>
+
+<p>Questo spettacolo nasce da una domanda semplice ma potente:<br>
+“cosa farebbe San Francesco se vivesse oggi?”<br>
+Viviamo in un tempo complesso:<br>
+guerre che non sembrano finire,<br>
+povertà che cresce dietro l’angolo,<br>
+crisi climatiche che minacciano il futuro del pianeta,<br>
+persone che corrono senza più trovare un senso.<br>
+In questo rumore, in questa confusione, ci siamo chiesti:<br>
+“avrebbe ancora qualcosa da dirci un giovane di Assisi vissuto ottocento anni fa?”<br>
+La risposta, per noi, è SÌ.<br>
+E forse, più che mai.</p>
+
+<p>Abbiamo immaginato un Francesco dentro il mondo di oggi, non come figura sacra da museo,<br>
+non come eroe irraggiungibile,<br>
+ma come un ragazzo capace di mettersi in cammino controcorrente.<br>
+Un ragazzo che non fugge i problemi / li attraversa.<br>
+Che non alza la voce / ascolta.<br>
+Che non predica / vive.<br>
+In un tempo in cui tutto spinge a correre/ lui sceglie la lentezza.<br>
+In un sistema che misura il valore in base a ciò che possiedi, lui sceglie la SEMPLICITÀ.<br>
+Davanti ai conflitti, alla violenza e alle divisioni, lui prova a costruire PONTI, non muri.<br>
+Davanti al dolore del pianeta, si sente RESPONSABILE, non spettatore.<br>
+Per questo abbiamo deciso di raccontare un Francesco moderno.<br>
+Perché il suo sguardo limpido può ancora illuminare i nostri dubbi,<br>
+perché il suo “poco” può diventare il nostro “basta”,<br>
+perché la sua fragilità può insegnarci che non serve essere perfetti per fare la differenza.<br>
+Il nostro San Francesco, lo immaginiamo.<br>
+Non vestito di sacco / ma di SEMPLICITÀ.<br>
+Non armato di miracoli / ma di SGUARDI LIMPIDI.<br>
+Non fuori dal mondo / ma DENTRO LE NOSTRE STESSE CONTRADDIZIONI.<br>
+Perché a volte basta qualcuno che cammina piano, per mostrarci dove abbiamo smesso di guardare.<br>
+<em>(il brano sfuma)</em></p>
+
+
+<br> 
+<br>
+<br> 
+
+<p><strong>PRIMA SCENA: “Controcorrente”</strong><br>
+<em>(Francesco cammina lentamente mentre intorno tutti si muovono velocissimi.)</em></p>
+
+<p>1: Dai, muoviti! È tardi!<br>
+2: Hai visto l’ultima storia? Sta spaccando!<br>
+3: Se non produci, non vali.<br>
+4: Se non corri, resti indietro.<br>
+<em>(Il movimento del gruppo è frenetico: gesti ripetitivi, simili a una coreografia. Francesco continua a camminare lentamente, quasi in meditazione.)</em></p>
+
+<p><strong>FRANCESCO</strong> (calmo, al 4 ragazzo): Perché dovrei correre? La vita non è una gara.<br>
+4: (si ferma, confuso) Ma… tutti corrono.<br>
+<strong>FRANCESCO</strong>: Appunto.<br>
+<em>(tutti si fermano e lo osservano)</em><br>
+3: (ironico) E tu chi saresti? Un ribelle?<br>
+<strong>FRANCESCO</strong> (sorridendo): Solo uno che prova a respirare. <em>(Si sdraia o siede a terra, semplice. Gli altri osservano, spiazzati.)</em> In un mondo che vuole tutto e subito… io scelgo il “poco”, che non è miseria. È libertà.<br>
+<em>(Francesco si alza, resta seduto, guarda gli altri.)</em> Non devo convincere nessuno. Non ho ricette, né dogmi. Sono soltanto… un uomo che prova a vivere con leggerezza. Con verità. Con amore.<br>
+<em>(Silenzio. Il coro si raduna attorno a lui, più calmo. La frenesia si spegne. Si crea uno spazio vuoto, pulito.)</em></p>
+
+<p><strong>VOCE NARRANTE</strong>: E così comincia il nostro viaggio. Con un ragazzo qualsiasi, che sceglie di non correre, in un mondo che non sa più fermarsi.<br>
+<em>(Luci sfumano.)</em></p>
+
+<br> 
+<br> 
+<br>
+
+<p><strong>QUADRO 1: Frate Sole – l’influencer buono</strong><br>
+<em>(Un ragazzo entra correndo con il cellulare in mano. Fa selfie in tutte le direzioni. Ogni volta che scatta, parte un FLASH breve. Sorride esageratamente, cambia pose, fa cuoricini con le dita.)</em></p>
+
+<p><strong>CORO</strong> (mormorio ritmato, quasi un beat)<br>
+Like.<br>
+Scrolla.<br>
+Condividi.<br>
+Ancora.<br>
+Ancora.</p>
+
+<p><strong>INFLUENCER</strong> (senza nome, sorriso tirato, voce energica): Ciao ragazzi!<br>
+Nuovo vlog!<br>
+Oggi vi faccio vedere la mia vita perfetta!<br>
+Guardate che luce!<br>
+Che stile!<br>
+Che successo!<br>
+<em>(Altro selfie – FLASH)</em></p>
+
+<p><strong>VOCE NARRANTE</strong> (lieve, quasi poetica): Ma nessuno vedeva che,<br>
+dopo ogni flash…<br>
+arrivava un piccolo buio.<br>
+<em>(Il ragazzo abbassa il telefono per un istante: il suo sorriso cade. È stanco, vuoto. Poi riprende a sorridere forzatamente.)</em></p>
+
+<p><strong>INFLUENCER</strong>: Devo postare…<br>
+Devo crescere…<br>
+Devo essere qualcuno…<br>
+Perché senza like…<br>
+senza questa luce…<br>
+io non sono niente.<br>
+<em>(FLASH. Ma stavolta lui chiude gli occhi: il flash gli fa male.)</em></p>
+
+<p><em>(Entra Francesco)</em><br>
+<strong>FRANCESCO</strong> (calmo, fermo): Perché ti nascondi dietro tutta questa luce?<br>
+<strong>INFLUENCER</strong> (Il ragazzo sobbalza): Io? Nascondermi??<br>
+Ma guarda!<br>
+Io risplendo!<br>
+Sono famoso!<br>
+Tutti mi seguono!<br>
+<strong>FRANCESCO</strong> (gentile): Eppure…<br>
+tu non guardi mai nessuno negli occhi.<br>
+<em>(Silenzio. Il ragazzo abbassa lentamente il telefono.)</em></p>
+
+<p><strong>FRANCESCO</strong>: Perché sei triste?<br>
+<strong>INFLUENCER</strong> (quasi sussurrando): Perché…<br>
+nessuno mi vede davvero.<br>
+Mi vedono…<br>
+ma non mi guardano.<br>
+Ho tutto…<br>
+ma non ho nessuno.<br>
+Mi manca…<br>
+mi manca l’amore.<br>
+<strong>FRANCESCO</strong>: E cosa vorresti?<br>
+<strong>INFLUENCER</strong>: Vorrei…<br>
+che la mia luce servisse.<br>
+Non solo per farmi vedere…<br>
+ma per illuminare qualcuno.<br>
+<strong>FRANCESCO</strong> (sorridendo, toccandogli la mano): Allora vieni.<br>
+Smetti di inseguire la tua luce.<br>
+E aiutami a portare luce agli altri.<br>
+<em>(Gli prende il telefono. Lo spegne dolcemente.)</em><br>
+Da oggi…<br>
+ti chiamerò Frate Sole.<br>
+Perché la tua luce…<br>
+non viene dal flash.<br>
+Viene da qui. <em>(toccandogli il petto)</em></p>
+
+<p><em>(I due vengono illuminati da una luce dorata mentre il coro recita un verso del laudato si. I due escono insieme)</em><br>
+<strong>CORO</strong> (suono caldo, tutti insieme)<br>
+1^ versione «Laudato si’, mi’ Signore, cum tucte le tue creature,<br>
+spetialmente messor lo frate Sole,<br>
+lo qual è iorno, et allumini noi per lui.»<br>
+2^ versione «Laudato si’, mi’ Signore,<br>
+per frate Sole,<br>
+che allumina il giorno<br>
+e rischiara i nostri passi.»</p>
+
+<br>
+<br>
+<br>
+
+<p><strong>QUADRO 2 – Sora Luna (ragazza poetessa)</strong><br>
+Luci soffuse, toni freddi/blu. Al centro o leggermente a lato, Sora Luna è seduta con quaderno e penna, assorta, guarda<br>
+il cielo o una luce simbolica sopra di lei.</p>
+
+<p><strong>NARRATRICE:</strong><br>
+Seduta in disparte,<br>
+lascia che il cielo le entri nel cuore.<br>
+Ogni parola che scrive<br>
+è un passo dentro se stessa:<br>
+fragile, ma piena di sogni.<br>
+Non cerca applausi,<br>
+cerca una luce che la guidi.<br>
+E tu, luna,<br>
+con la tua luce povera e riflessa,<br>
+sai rischiarare ciò che il giorno non vede<br>
+e far brillare gli occhi dei sognatori.<br>
+Molti ti hanno guardata,<br>
+molti ti hanno amata:<br>
+Leopardi ti chiamava placida regina,<br>
+D’Annunzio ti vedeva compagna dei silenzi,<br>
+e Branduardi parla di te<br>
+come di una presenza luminosa e ambigua,<br>
+capace di affascinare e confondere.<br>
+E lei, sotto il tuo chiarore,<br>
+scrive in silenzio:<br>
+una voce lieve,<br>
+una luce povera che diventa ricchezza<br>
+quando qualcuno la guarda.</p> 
+
+<br>
+
+<p><strong>SORA LUNA</strong><br>
+<em>(recita, voce lenta e intensa, seduta leggermente curva in avanti, come se proteggesse il quaderno e le<br>
+parole dentro di sé. Gesti con le mani delicati, che accompagnano la poesia. Carezza del quaderno o della penna<br>
+mentre parla, come a toccare i propri pensieri. Mani che si intrecciano o sfiorano il viso quando descrive emozioni<br>
+forti paura, desiderio, amore. Sguardo verso il cielo o lontano, spesso assente dal mondo intorno, simbolo della sua<br>
+interiorità e dei sogni. Respiro profondo, lento, che si percepisce come ritmo della sua mente e dei suoi sentimenti.)</em><br>
+<br>
+BRANO LA LUNA BRANDUARDI<br>
+Ho voglia di ammalarmi di te…<br>
+Come luce in tempesta. Brucia.<br>
+<em>(dopo BRUCIA, pausa breve, mani sul petto, occhi chiusi o sguardo basso,<br>
+respiro profondo)</em><br>
+<em>(leggero piegamento in avanti, mani che sfiorano il quaderno come protezione.)</em><br>
+Una voragine mi toglie il<br>
+respiro.<br>
+<em>(dopo “respiro.” per far sentire la sofferenza trattenuta.)</em><br>
+Un pensiero mi assale circonciso.<br>
+Un tale mi sussurra con lieve sospiro:<br>
+<em>(testa bassa, occhi chiusi, mani che si intrecciano, tremolio leggero se naturale)</em><br>
+Ahimè dolente cor mio, che io<br>
+Sola va bramando te. Brucia.<br>
+O cor mio arrossa in presenza di te.<br>
+Tieni stretto il mio malanno.<br>
+Con chiave per cor mio e tuo.<br>
+Occhi intrepidi con sol nell’animo.<br>
+Cor che mi sussulta in mal tuo.<br>
+<em>(mani aperte davanti al petto, leggero inchino del capo, occhi chiusi).</em><br>
+Fa ch’io muoia con sorriso tuo.<br>
+<em>(Pausa<br>
+dopo la frase per dare tempo al pubblico di percepire la profondità del sentimento.)</em><br>
+Fa tu deformare quest’amma in me<br>
+che ustiona ogni mio fievole respiro.<br>
+Che io non sappia nuotare.<br>
+<em>(inclinazione del corpo in avanti, mani che si lasciano cadere lentamente,<br>
+respirazione enfatizzata).</em><br>
+Permettimi<br>
+di perder lentamente il respiro mio.<br>
+Dimenticami nel tuo piacevole sospiro.<br>
+<em>(mani che si stringono al cuore, occhi chiusi)</em><br>
+Con odio e amor, voglio ammalarmi di te.<br>
+<em>(pausa)</em><br>
+Asseconda ogni mia voglia. Permettimi<br>
+di diventare la tua ancora di salvataggio.<br>
+Lascia che io sia la sola a cui darai<br>
+Il tuo malanno. Lascia che io trasformi<br>
+le sofferenze tue in gioia e amore.<br>
+Lascia il cor tuo custodito in me.</p>
+
+<p><em>(Piccola pausa. Francesco entra, si avvicina lentamente senza interromperla, osserva il quaderno.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(voce calma, sorridendo leggermente):</em><br>
+Che scrivi qui? Cos’è che ti prende così tanto il cuore?</p>
+
+<p><strong>SORA LUNA</strong> <em>(alzando lo sguardo, leggermente imbarazzata ma sincera):</em><br>
+Parlo… di qualcuno.<br>
+Di ciò che sento dentro.<br>
+Non so se è gioia o tormento…</p>
+
+<p><strong>FRANCESCO</strong> <em>(annuisce, ascolta con attenzione):</em><br>
+Vedo un cuore che brilla, anche nel dolore…<br>
+E come la luna illumina la notte, così le tue parole illuminano ciò che ti circonda.<br>
+Da oggi ti chiamerò Sora Luna,</p>
+
+<p><strong>SORA LUNA</strong> <em>(sorridendo timidamente, un po’ sorpresa):</em><br>
+Sora Luna…</p>
+
+<p><strong>FRANCESCO</strong><br>
+sì…. perché porti luce dove c’è buio e sogni dove altri non vedono.</p>
+
+<p><strong>SORA LUNA</strong><br>
+Mi piace…</p>
+
+<p><strong>FRANCESCO</strong>: Continua a scrivere… e lascia che il tuo cuore parli al mondo.</p>
+
+<p><em>(Piccola pausa poetica. Luci sfumano lentamente, la scena si chiude.)</em></p>
+
+<p><strong>CORO:</strong><br>
+Laudato si’, mi’ Signore, per sora Luna e le stelle:<br>
+in celu l’ài formate clarite et pretiose et belle.</p>
+
+<br>
+<br>
+<br>
+
+
+<p><strong>QUADRO 3 – Sorelle Stelle:</strong><br>
+Le Stelle entrano in silenzio, ciascuna con un libro, un quaderno, appunti stampati. Si muovono lentamente, come un<br>
+firmamento che prende vita. Parlano tra loro e al pubblico, raccontando ciò che hanno scoperto studiando Buddha e<br>
+San Francesco. Il Francesco moderno entra e si siede ai margini, non protagonista. Ascolta in silenzio, come spettatore<br>
+privilegiato</p>
+
+<p><strong>STELLA 1</strong> <em>(guardando il proprio libro, stupita):</em><br>
+Più leggo… più mi sembra incredibile.<br>
+Due storie distanti…<br>
+due mondi lontani…<br>
+che però parlano la stessa lingua.</p>
+
+<p><strong>STELLA 2</strong> <em>(indicando le sue pagine):</em><br>
+Abbiamo studiato Siddhartha,<br>
+il giovane che divenne Buddha.<br>
+Un principe soffocato nell’abbondanza<br>
+che lasciò tutto per cercare la verità.</p>
+
+<p><strong>STELLA 1</strong> <em>(aprendo il proprio quaderno):</em><br>
+E poi abbiamo letto di un altro giovane…<br>
+questa volta ad Assisi.<br>
+Un ragazzo ricco, vivace, pieno di sogni…<br>
+che un giorno sentì un richiamo<br>
+più forte del denaro<br>
+e lasciò tutto.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Siddhartha vide il dolore del mondo<br>
+e non poté più voltarsi dall’altra parte.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Francesco vide la sofferenza dei poveri<br>
+e non poté più vivere come prima.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Entrambi figli amati.<br>
+Entrambi destinati a una vita comoda.<br>
+Entrambi… in cammino verso qualcos’altro.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Le nostre letture non dicono<br>
+che fossero identici.<br>
+No.<br>
+Ognuno seguì il proprio sentiero.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Ma nessuno dei due<br>
+volle imporre la sua strada agli altri.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Entrambi cercavano solo<br>
+un modo per vivere bene,<br>
+in pace,<br>
+con rispetto per ogni creatura.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Nel Dharma abbiamo letto:<br>
+“Non fare male a nessun essere vivente.”</p>
+
+<p><strong>STELLA 1:</strong><br>
+E nella vita di Francesco:<br>
+“Chi ama la creatura, ama il Creatore.”</p>
+
+<p><strong>STELLA 2:</strong><br>
+Due frasi diverse.<br>
+Due mondi diversi.<br>
+Stessa luce.</p>
+
+<p><em>(Le ragazze sollevano i libri verso l’alto, come fossero stelle che brillano.)</em></p>
+
+<p><strong>STELLA 1:</strong><br>
+Abbiamo scoperto<br>
+che la bontà non ha religione.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Che la compassione non ha passaporto.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Che la saggezza non appartiene a una sola via.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Abbiamo scoperto<br>
+che gli uomini possono incontrarsi<br>
+anche senza assomigliarsi.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Possono rispettarsi<br>
+senza convincersi.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Possono brillare<br>
+senza oscurare l’altro.</p>
+
+<p>Le luci si alzano, il cielo si illumina.</p>
+
+
+<br>
+<br>
+<br>
+
+<p><strong>QUADRO 4 – Frate Vento</strong><br>
+<em>(Le Stelle sono ancora in scena, con i loro libri al petto. La luce si muove lentamente, come se l’aria stesse cambiando.<br>
+Da un lato entra Sorella Vento, Amira, senza clamore: porta uno zaino leggero, qualche foglio, magari un piccolo taccuino. Avanza come chi ascolta prima di parlare. Una brezza leggera attraversa lo spazio.)</em></p>
+
+<p><strong>AMIRA</strong> <em>(sorridendo, al pubblico e alle Stelle):</em><br>
+Scusate se arrivo ora.<br>
+Ho sentito le vostre parole<br>
+e mi sono fermata a… respirarle.<br>
+A volte basta un soffio<br>
+per capire che non siamo soli.<br>
+<em>(con semplicità)</em> scusate, non mi sono presentata.<br>
+Mi chiamo Amira.<br>
+Vengo da un’altra storia,<br>
+un altro orizzonte,<br>
+ma la stessa sete.<br>
+Nella mia fede si dice:<br>
+«Dio ha fatto di voi popoli e tribù<br>
+perché vi conosceste,<br>
+non per separarvi.»<br>
+<em>(sollevando il taccuino)</em><br>
+qui ci appunto le cose che il vento mi insegna.<br>
+Perché il vento…<br>
+non ha confini, non ha padroni,<br>
+non chiede permesso.<br>
+Passa, tocca, scuote.<br>
+E poi riparte.<br>
+Ed ho imparato, che:<br>
+la libertà è un dono<br>
+ma anche una responsabilità.<br>
+Che lo spirito non è aria ferma:<br>
+si muove, respira, accende.<br>
+Che se qualcosa non va<br>
+non possiamo restare immobili<br>
+come foglie bagnate.<br>
+Il mondo è casa nostra.</p>
+
+<p><em>(Francesco ascolta da un angolo. Fa un passo avanti, ma non interrompe, Amira rivolgendosi alle stelle.)</em></p>
+
+<p><strong>AMIRA</strong>:<br>
+Io non porto verità.<br>
+Porto un invito.<br>
+A guardare più lontano,<br>
+a proteggere ciò che respira,<br>
+a non aver paura di cambiare.<br>
+<em>(con dolcezza)</em>:<br>
+Ogni fede<br>
+ha la sua musica. E oggi…<br>
+tutte suonano insieme.</p>
+
+<p><em>(Un momento di silenzio. Francesco moderno si avvicina, emozionato.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Vi ho ascoltati.<br>
+Tutti.<br>
+Ognuno diverso.<br>
+Ognuno prezioso.<br>
+E mi accorgo che…<br>
+non siete solo compagni di viaggio.<br>
+Siete più di questo.<br>
+Voi, che cercate la verità nella gentilezza…<br>
+e illuminate senza pretendere…<br>
+sarete, Sorelle Stelle.<br>
+E tu <em>(guardando Amira)</em><br>
+che arrivi come aria nuova<br>
+e ci ricordi che lo spirito è movimento…<br>
+sei Frate Vento della Libertà.</p>
+
+<p><em>(Amira abbassa il capo, grata. Le Stelle sorridono. Nessun tono religioso esclusivo: solo riconoscimento.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(piano)</em>:<br>
+Se vi va…<br>
+camminiamo insieme.<br>
+Non per diventare uguali,<br>
+ma per rispettare le differenze<br>
+come si rispettano i venti<br>
+e le stelle.</p>
+
+<p><em>(Una luce attraversa la scena come un soffio. Il quadro si chiude con i quattro giovani uniti: non simili, ma vicini.)</em></p>
+
+<p><strong>CORO</strong>:<br>
+«Laudato si’, mi’ Signore,<br>
+per sora Luna e le stelle,<br>
+in celu l’ài formate<br>
+clarite et pretiose et belle.<br>
+E per Frate Vento,<br>
+et per aere et nubilo<br>
+et sereno et onne tempo,<br>
+per lo quale a le tue creature dài sostentamento.»</p>
+
+<br>
+<br>
+<br>
+
+<p><strong>QUADRO 5 – Frate Fuoco – L’Uomo che Brucia e Illumina</strong><br>
+<em>(Voce Narrante fuori campo, calma ma intensa)</em></p>
+
+<p><strong>VOCE NARRANTE</strong>:<br>
+«A volte la vita accende in noi luci che non abbiamo chiesto.<br>
+Piccole fiamme che ci rincorrono:<br>
+paure, rabbie, ricordi che bruciano ancora.<br>
+E quando cerchiamo il buio per riposare,<br>
+una candela si accende dentro di noi<br>
+e illumina ciò che non volevamo vedere.<br>
+Ma anche la luce più inquieta<br>
+può diventare guida,<br>
+se qualcuno ci insegna a guardarla senza tremare.<br>
+Un cuore impaurito può trovare pace<br>
+quando smette di fuggire dalla propria fiamma.<br>
+E allora, quando il fuoco interiore inizia a vibrare,<br>
+tutto diventa possibile:<br>
+la paura, la lotta… e la rinascita.<br>
+Ecco a voi…<br>
+il viaggio di Frate Fuoco.»</p>
+
+<p><em>(La scena è buia. Al centro scena c’è una candela accesa. Silenzio. Si sente un respiro affannoso, quasi un singhiozzo trattenuto. Un ragazzo entra di corsa, guardandosi alle spalle come se qualcuno o qualcosa lo inseguisse. Si ferma davanti alla fiamma, pallido, agitato.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Non… non dovrebbe esserci luce.<br>
+Non adesso.</p>
+
+<p><em>(Si passa una mano tra i capelli, disperato.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+E invece eccola.<br>
+Una fiamma.<br>
+Sempre lei.<br>
+Sempre io.<br>
+Sono scappato…<br>
+Da me stesso.<br>
+Dalla mia rabbia che mi morde,<br>
+dal fuoco che porto dentro e che non mi lascia mai in pace.</p>
+
+<p><em>(Si avvicina alla candela con paura.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Perché torni?<br>
+Perché non mi lasci?<br>
+Perché devo sempre ardere?</p>
+
+<p><em>(Prova a spegnere la candela con un soffio. La fiamma tremola, ma non si spegne. Il ragazzo indietreggia, impaurito.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Non si spegne.<br>
+Nemmeno adesso.<br>
+Nemmeno quando prego che finisca tutto…<br>
+quando prego di non fare più male a nessuno.<br>
+Ho parlato troppo forte, ho ferito senza volerlo…<br>
+e poi ho promesso, promesso, promesso ancora:<br>
+“Mai più. Mai più.”<br>
+Ma la fiamma…<br>
+la fiamma mi segue come un’ombra che brucia.</p>
+
+<p><em>(Si inginocchia, guardando la candela come fosse uno specchio.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Che ci faccio con te?<br>
+Che ci faccio con questo fuoco che mi divora?<br>
+Non so più se sono vivo…<br>
+o se sto solo incendiando tutto quello che mi circonda.</p>
+
+<p><em>(Prova di nuovo a spegnerla. Agita la mano, soffia, quasi piange. Niente.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Perché non muori?<br>
+Perché non mi lasci tregua?<br>
+Io… io voglio solo pace.<br>
+Solo pace.</p>
+
+<p><em>(Entra lentamente Francesco, come se fosse luce che cammina. Non corre, non è agitato. È sereno, presente. Si ferma accanto al ragazzo senza toccarlo.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Chi sei?<br>
+E perché tremi davanti a una fiamma così piccola?</p>
+
+<p><em>(Il ragazzo alza lo sguardo verso di lui, ancora scosso, incapace di rispondere. Con un gesto lentissimo, quasi un rito, Francesco prende la candela dalle mani del ragazzo. La osserva un istante… poi soffia con calma. La fiamma si spegne al primo colpo. Subito la luce della scena si addolcisce. Il ragazzo respira, all’improvviso più leggero.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Sei… riuscito a spegnerla.</p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Non era la fiamma a essere forte.<br>
+Eri tu… che avevi paura.<br>
+La paura fa sembrare il fuoco più grande di quello che è.<br>
+Ma un cuore guidato… può far pace anche con le sue scintille.</p>
+
+<p><em>(Appoggia una mano rassicurante sulla spalla del ragazzo.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Sai come voglio chiamarti?<br>
+Frate Fuoco.</p>
+
+<p><em>(Il ragazzo lo guarda, sorpreso.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Non perché tu abbia distrutto…<br>
+ma perché hai avuto il coraggio di guardare le tue fiamme negli occhi.<br>
+Perché hai scelto di non scappare più.<br>
+Perché dentro di te il fuoco può scaldare, non solo bruciare.<br>
+E oggi…<br>
+hai fatto il primo passo verso la pace.</p>
+
+<p><em>(Il ragazzo sorride piano. Il suo respiro è calmo. La scena si schiarisce con una luce dorata.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Frate Fuoco…<br>
+mi piace.<br>
+Sì.<br>
+Voglio essere questo.</p>
+
+<p><strong>CORO</strong>:<br>
+«Laudato si’, mi’ Signore,<br>
+per frate Focu,<br>
+per lo quale ennallumini la nocte,<br>
+ed ello è bello<br>
+et robustoso<br>
+et forte.»</p>
+
+<p><em>(Luce dorata. Il ragazzo e Francesco restano immobili accanto alla candela spenta.)</em></p>
+
+<br>
+<br>
+<br>
+
+<p><strong>QUADRO 6 – Sorella Acqua – La Ragazza che Scorre e Accoglie</strong><br>
+<em>(Voce Narrante fuori campo, calma ma intensa)</em></p>
+
+<p><strong>VOCE NARRANTE</strong>:<br>
+A volte la vita ci travolge con correnti che non abbiamo scelto.<br>
+Piccole tempeste di rabbia, preoccupazioni, pensieri agitati che ci scuotono.<br>
+E quando cerchiamo un momento di pace,<br>
+una fonte d’acqua si accende dentro di noi,<br>
+e ci mostra la via per chiarire e accogliere.<br>
+Ma anche il cuore più inquieto<br>
+può diventare sereno,<br>
+se qualcuno ci insegna a lasciar scorrere ciò che ci turba.<br>
+Un’anima agitata può trovare armonia<br>
+quando smette di opporsi al proprio flusso interiore.<br>
+E allora, quando la calma interiore inizia a scorrere,<br>
+tutto diventa possibile:<br>
+la gentilezza, la comprensione… e la pace.</p>
+
+<p><em>(Luce azzurra soffusa. Due ragazzi sono già in scena, agitati, rivolti l’uno verso l’altro. Francesco cerca di calmarli, una ragazza presente in scena non interviene.)</em></p>
+
+<p><strong>RAGAZZO 1</strong> <em>(arrabbiato)</em>:<br>
+Non capisci mai! Ogni volta è la stessa storia!</p>
+
+<p><strong>RAGAZZO 2</strong> <em>(irritato)</em>:<br>
+E tu pensi di avere sempre ragione!<br>
+Non ascolti mai!</p>
+
+<p><strong>FRANCESCO</strong> <em>(cercando di calmare)</em>:<br>
+Ehi, basta… non serve urlare… proviamo a parlare.</p>
+
+<p><strong>RAGAZZO 1</strong>:<br>
+Parlare? Non serve a niente!</p>
+
+<p><strong>RAGAZZO 2</strong>:<br>
+Sì, è inutile!</p>
+
+<p><em>(La discussione continua. La ragazza, calma, nota e si avvicina a una piccola fonte d’acqua o ciotola posta al centro del palco. Inizia a giocare con l’acqua tra le mani, sorride, fa cadere l’acqua delicatamente. Poi decide di intervenire.)</em></p>
+
+<p><strong>RAGAZZA</strong> <em>(chiara, ferma)</em>:<br>
+Basta.</p>
+
+<p><em>(Silenzio immediato. I due si voltano.)</em></p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Guardate lei.<br>
+L'acqua.</p>
+
+<p><em>(Solleva un po' d'acqua con le mani, la lascia cadere lentamente.)</em></p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Punteggio.<br>
+Non urlare.<br>
+Non si mette a discutere con i sassi che trova.<br>
+Non si vendica delle rive troppo strette.<br>
+Non chiedo scusa per essere limpida.</p>
+
+<p><em>(Pausa. Li guarda, più dolce.)</em></p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Emily Dickinson diceva:<br>
+«L'acqua che passa non chiede permesso. Va.<br>
+E nel suo andare crea la strada».</p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Siate come lei…<br>
+scorre libera, chiara e fresca.<br>
+E proprio perché non si irrigidisce,<br>
+arriva lontano.<br>
+Ovunque.<br>
+Sempre.</p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Voi due…<br>
+state facendo l'opposto.<br>
+State rimanendo fermi nei vostri muri.<br>
+Nelle vostre versioni dei fatti.<br>
+Nei vostri "ho ragione io".<br>
+E sapete qual è il problema?</p>
+
+<p><em>(Li osserva con un mezzo sorriso triste.)</em></p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Le persone non si rompono perché litigano.<br>
+Si rompono quando smettono di scorrere.<br>
+Quando tengono tutto dentro<br>
+come acqua chiusa in una bottiglia agitata…<br>
+prima o poi…<br>
+scoppia.</p>
+
+<p><em>(I due ragazzi la guardano, colpiti.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(calmo, curioso davvero)</em>:<br>
+E tu come fai…<br>
+a restare così?<br>
+Così limpida?</p>
+
+<p><strong>RAGAZZA</strong>:<br>
+TS Eliot diceva:<br>
+«Nel silenzio dell'acqua impariamo ad ascoltare noi stessi».</p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Quando qualcosa mi ferisce,<br>
+metto le mani sotto l'acqua<br>
+e lascio andare.<br>
+Il resto…<br>
+lo chiarisco.<br>
+Non per forza subito,<br>
+non per forza perfetta.<br>
+Ma scorro.<br>
+Non resto ferma.<br>
+Mai.</p>
+
+<p><strong>FRANCESCO</strong> <em>(allegramente)</em>:<br>
+Da oggi ti chiameremo Sorella Acqua.<br>
+Perché sai passare in mezzo alle tempeste<br>
+senza diventare tempesta.<br>
+Perché pulisci senza ferire.<br>
+Perché hai scelto di scorrere<br>
+portando pace e armonia.</p>
+
+<p><i>(La ragazza sorride sorpresa e felice. I ragazzi, ancora riflessivi, annuiscono lentamente. La luce azzurra si
+intensifica, avvolgendo tutti.)</i></p>
+
+<br>
+<br>
+<br>
+
+<p><strong>QUADRO 7 – SORA MADRE TERRA</strong></p>
+
+<p><em>Tra città grigie e alberi spogli,<br>
+una donna semina semi di luce.<br>
+Mani segnate dal tempo,<br>
+cuore aperto a chi è stanco,<br>
+a chi cerca riparo,<br>
+a chi ha smarrito la strada.<br>
+Germogli verdi nascono tra rifiuti,<br>
+bambini raccolgono speranza,<br>
+cani e uccelli trovano cura,<br>
+ogni creatura è importante.<br>
+La sobrietà è gioia,<br>
+la cura è rivoluzione,<br>
+e nel silenzio della terra arida<br>
+fiorisce la vita.<br>
+In questo quadro, una piccola storia diventa una grande lezione: la Terra si salva solo se impariamo<br>
+a crederci insieme.</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Io vengo da un paese del Sud.<br>
+Sono cresciuto tra i filari di pomodori e il profumo del grano.<br>
+Una terra bella, bellissima… ma anche ferita.<br>
+Avete mai sentito parlare della Terra dei Fuochi?<br>
+Ecco, quella è casa mia.<br>
+Terra che dovrebbe dare vita<br>
+e invece sputiamo veleno dall’alba alla notte.<br>
+La chiamiamo “terra”, ma a volte sembra un pianto.</p>
+
+<p><strong>AFRICA</strong>:<br>
+Io vengo dall’altra parte del mare.<br>
+Là dove la terra non piange:<br>
+si spacca.<br>
+Dove il sole non scalda:<br>
+brucia.<br>
+La gente dice “Africa” come fosse tutta uguale,<br>
+ma il mio villaggio è una manciata di capanne<br>
+e un pozzo che si svuota troppo in fretta.</p>
+
+<p><em>(Si guardano, con curiosità sincera.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Da noi l’acqua c’è.<br>
+A volte troppa, quando allaga tutto.<br>
+Ma non sappiamo più far crescere le cose come una volta.<br>
+Il terreno è stanco, avvelenato…<br>
+E noi pure.</p>
+
+<p><strong>AFRICA</strong>:<br>
+Da noi l’acqua non c’è quasi mai.<br>
+Eppure non so come spiegarlo<br>
+un seme, anche piccolo,<br>
+a volte decide di provarci lo stesso.<br>
+Gli basta un dito di pioggia,<br>
+un pezzo d’ombra,<br>
+una mano che crede in lui.<br>
+Forse perché la nostra gente,<br>
+anche senza niente,<br>
+non smette di sperare.</p>
+
+<p><em>(La donna africana si inginocchia, apre il panno, mostra una manciata di terra arida.)</em></p>
+
+<p><strong>AFRICA</strong>:<br>
+Guarda questa terra.<br>
+Non ha colore, non ha forza.<br>
+Ma se ci metti un seme…<br>
+se gli parli…<br>
+se gli dai l’unica goccia che hai…<br>
+lui ti risponde.<br>
+Sempre.<br>
+Non perché è magico,<br>
+ma perché noi non ci arrendiamo.</p>
+
+<p><em>(Francesco la osserva, colpito.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Sapessi quante volte, da noi,<br>
+abbiamo dimenticato di “parlare” alla terra.<br>
+O peggio, l’abbiamo trattata come un sacco per buttare scarti.<br>
+Per anni.<br>
+Una volta, se piantavi un seme, bastava aspettare.<br>
+Ora bisogna pregare che non sia finito sotto qualche rifiuto tossico.<br>
+La mia gente è stanca.<br>
+E anche un po’ arrabbiata.</p>
+
+<p><strong>AFRICA</strong>:<br>
+Da noi la stanchezza non serve.<br>
+Nessuno ti regala niente.<br>
+E allora lavoriamo,<br>
+cantiamo,<br>
+ridiamo,<br>
+teniamo i bambini stretti<br>
+come fossero acqua.<br>
+Siamo poveri, è vero…<br>
+ma poveri non vuol dire morti.<br>
+E nemmeno arrabbiati.<br>
+Vuol dire che dobbiamo inventarci la vita ogni giorno.</p>
+
+<p><em>(Silenzio. Si siedono vicini.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Sai…<br>
+quando ti guardo, io vedo qualcosa che qui, in Europa,<br>
+abbiamo quasi dimenticato.<br>
+La forza.<br>
+La leggerezza.<br>
+Il coraggio di farcela comunque.<br>
+Sei nera, sì…<br>
+ma quello che vedo non è il colore.<br>
+È la luce.<br>
+Quella che noi, bianchi, abbiamo un po’ perso per strada.</p>
+
+<p><strong>AFRICA</strong>:<br>
+Il colore è solo pelle.<br>
+La storia invece la senti dentro.<br>
+Noi neri sappiamo cosa vuol dire<br>
+camminare con il sole sulla testa<br>
+e il mondo sulle spalle.<br>
+Per questo un seme,<br>
+anche nell’arsura,<br>
+a volte decide di nascere.<br>
+Perché sente che non è solo.</p>
+
+<p><em>(Si alzano. L’africana porge un seme a Francesco.)</em></p>
+
+<p><strong>AFRICA</strong>:<br>
+Tienilo.<br>
+È piccolo, ma è testardo.</p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Come te.</p>
+
+<p><strong>AFRICA</strong>:<br>
+Come noi.</p>
+
+<p><strong>AFRICA</strong>:<br>
+La terra cambia.<br>
+Le stagioni cambiano.<br>
+Le persone cambiano.<br>
+Ma un seme…<br>
+quello no.<br>
+Un seme nasce per crescere.<br>
+E cresce solo<br>
+se qualcuno ci crede.</p>
+
+<p><em>(Si guardano. Francesco stringe il seme tra le dita.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(con emozione sincera)</em>:<br>
+Grazie…<br>
+di cuore.<br>
+Tu, con niente, mi hai insegnato tutto.<br>
+E sai come ti voglio chiamare da adesso?<br>
+Sora Madre Terra.<br>
+Perché tu… tu fai nascere la vita anche dove io credevo fosse impossibile.</p>
+
+<p><em>(L’africana sorride, sorpresa ma fiera. Si abbracciano.)</em></p>
+
+<p><strong>CORO</strong>:<br>
+Laudato si’, mi’ Signore, per sora nostra matre Terra,<br>
+la quale ne sustenta et governa,<br>
+et produce diversi fructi con coloriti flori et herba.</p>
+
+<br>
+<br>
+<br>
+
+
+<p><strong>QUADRO 8 – FRATELLO LUPO – Spacciatore – Dipendenza</strong></p>
+
+<p><em>(Il Lupo entra lentamente. Cappuccio basso, mani in tasca. Si ferma. Guarda il pubblico come se potesse morderlo.)</em></p>
+
+<p><strong>IL LUPO</strong>:<br>
+E che tenit a guardà?<br>
+Forz giratev a chellata parte.</p>
+
+<p><strong>IL LUPO</strong>:<br>
+Lo so perché mi guardate così.<br>
+Paur.<br>
+Schif.<br>
+Giudizio.<br>
+Tenit semp a stessa faccia.<br>
+Tant nun fa mal…<br>
+fa abitudin.</p>
+
+<p><strong>IL LUPO</strong>:<br>
+Me chiamman<br>
+Delinquent.<br>
+Animal.<br>
+Animal… sì.<br>
+Questo ve lo concedo.</p>
+
+<p><strong>IL LUPO</strong>:<br>
+Ecco, nu lup…<br>
+Sì… me piace.</p>
+
+<p><strong>LUPO</strong>:<br>
+Perché nu lup, alla fine, che fa?<br>
+Morde per vivere.<br>
+Pe nun esser mangiat.</p>
+
+<p><strong>LUPO</strong>:<br>
+Io nun so’ nat lup,<br>
+ce songh addiventato.<br>
+Per fame.</p>
+
+<p><strong>LUPO</strong>:<br>
+Perché quando nun tien nisciun ca te tene a capa dritta,<br>
+te la tieni come capita.</p>
+
+<p><strong>LUPO</strong>:<br>
+E quann’ a famme addeventa troppa…<br>
+non guardi più cosa addenti.<br>
+Mordi e basta.</p>
+
+<p><em>(Sorride amaro.)</em></p>
+
+<p><strong>LUPO</strong>:<br>
+O sapit comm’ s’accummencia?</p>
+
+<p><strong>LUPO</strong>:<br>
+Non è che un giorno ti svegli e pensi:<br>
+“Mo’ vendo morte.”<br>
+No.</p>
+
+<p><strong>LUPO</strong>:<br>
+Prima la vivi.<br>
+A respir.</p>
+
+<p><strong>LUPO</strong>:<br>
+Te la buttano addosso gli altri:<br>
+na casa ca car a piezz,<br>
+nu pat ca va fuienn,<br>
+na mamma ca chiagne,<br>
+na scol ca nun te vò,<br>
+una città che ti usa.</p>
+
+<p><strong>LUPO</strong>:<br>
+Allor tu guard’ o munn<br>
+e spier’ ca o munn guarda a te.</p>
+
+<p><strong>LUPO</strong>:<br>
+Ma nel frattempo sei diventato invisibile.</p>
+
+<p><strong>LUPO</strong>:<br>
+E agli invisibili,<br>
+prima o poi,<br>
+qualcuno gli propone un affare.</p>
+
+<p><strong>LUPO</strong>:<br>
+E tu?<br>
+Ce car.</p>
+
+<p><strong>LUPO</strong>:<br>
+Pecché finalmente vali qualcosa.<br>
+Finalmente quacchedun te dic:<br>
+“Tu sierv.”</p>
+
+<p><strong>LUPO</strong>:<br>
+E chell’ è a fine toia.</p>
+
+<p><strong>LUPO</strong>:<br>
+E alla fine addevient<br>
+quel prodotto perfetto<br>
+di tutto quello che non avete voluto vedere.</p>
+
+<p><strong>LUPO</strong>:<br>
+E mò…<br>
+giratev a chellata parte,<br>
+comme avit fatto fino a mo’.</p>
+
+<p><em>(All’improvviso urla, feroce.)</em></p>
+
+<p><strong>LUPO</strong>:<br>
+FORZ’!<br>
+GIRATEVI!</p>
+
+<p><strong>LUPO</strong>:<br>
+Continuate a nun me vedé.<br>
+Continuate a nun vedé.</p>
+
+<p><em>(Pausa. Voce bassa, tremante sotto la rabbia.)</em></p>
+
+<p><strong>LUPO</strong>:<br>
+Io so’ nat lup…<br>
+e lup aggia murì.</p>
+
+<p><strong>LUPO</strong>:<br>
+Chest’ è a strada mia.<br>
+Chest’ è a vita ca me so’ scigliuto…<br>
+o forse è a vita ca ha scigliuto a me.</p>
+
+<p><em>(Si avvicina al pubblico, voce graffiata, dolce e crudele allo stesso tempo.)</em></p>
+
+<br>
+<br>
+<br>
+
+<p><strong>QUADRO 9 – SORELLA MORTE CORPOREA</strong></p>
+
+<p><strong>MARTINA</strong>:<br>
+C’è un pezzo del Cantico delle Creature che parla di una cosa di cui spesso non vogliamo parlare:<br>
+la morte.</p>
+
+<p><strong>MARTINA</strong>:<br>
+Ma lo fa in modo sorprendente.</p>
+
+<p><strong>MARTINA</strong>:<br>
+San Francesco la chiamava “sorella”.<br>
+Non per spaventare,<br>
+ma per ricordare che la vita ha tanti momenti,<br>
+e anche l’ultimo fa parte del viaggio.</p>
+
+<p><strong>MARTINA</strong>:<br>
+Oggi non vogliamo rappresentare quel Francesco che predica,<br>
+ma guardare questo tema con occhi moderni,<br>
+quelli di chi ogni giorno accompagna le persone con rispetto,<br>
+cura e delicatezza.</p>
+
+<p><strong>MARTINA</strong>:<br>
+Una figura che non fa paura,<br>
+perché porta presenza,<br>
+ascolto,<br>
+gentilezza.</p>
+
+<p><strong>MARTINA</strong>:<br>
+E così, in questo quadro,<br>
+“Sorella Morte” diventa una donna che lavora in un hospice.</p>
+
+<p><strong>MARTINA</strong>:<br>
+Una persona normale,<br>
+che con piccoli gesti sa portare un po’ di luce<br>
+proprio quando sembra che la luce si stia abbassando.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+<em>(serena)</em><br>
+Sapete qual è la cosa più sorprendente del mio lavoro?</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Che non è affatto triste come sembra da fuori.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Io lavoro in un posto dove le persone arrivano<br>
+quando sono molto, molto stanche.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+E il mio compito non è parlare di cose difficili…<br>
+ma farle stare comode,<br>
+farle sentire ascoltate,<br>
+accompagnarle con gentilezza.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+A volte basta un gesto piccolissimo:<br>
+sistemare un cuscino,<br>
+portare un bicchiere d’acqua,<br>
+restare seduti due minuti a parlare<br>
+del cane,<br>
+della scuola,<br>
+del meteo…</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+È un lavoro che parla più di vita<br>
+che di tutto il resto.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Tempo fa ho letto una frase<br>
+scritta da un uomo vissuto tantissimi anni fa.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Un tipo strano,<br>
+ma bello.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Lui diceva che la morte…<br>
+era una sorella.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Io da ragazza l’ho sempre trovata una frase assurda.<br>
+“Una sorella?<br>
+Ma come ti viene?”</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Poi ho iniziato a lavorare qui.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+E ho capito che quella frase<br>
+non parlava di paura.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Parlava di fiducia.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Perché la morte,<br>
+vista da vicino<br>
+e con le persone giuste accanto,<br>
+non somiglia a un mostro.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Somiglia più a un passaggio,<br>
+a un momento in cui qualcuno ti tiene la mano<br>
+quando tu non hai più voglia<br>
+di fare tutto da solo.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Vi è mai capitato di fare compagnia<br>
+a qualcuno che non stava tanto bene?</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Anche solo un raffreddore…<br>
+o una nonna stanca,<br>
+o un amico giù.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Ecco.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Quando ci siete,<br>
+quando ascoltate,<br>
+quando fate una battuta per alleggerire…<br>
+state facendo un pezzo del mio lavoro.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+State portando speranza.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Questa è Sorella Morte,<br>
+una parola strana per dire<br>
+che nessuno fa il viaggio da solo.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Che fino all’ultimo tratto,<br>
+quando saremo vecchissimi, spero,<br>
+ci sarà sempre qualcuno a darci una mano.</p>
+
+<p><em>(Si siede, sistema la coperta con cura.)</em></p>
+
+<p><strong>OPERATRICE</strong>:<br>
+E alla fine…<br>
+la speranza è proprio questa:<br>
+sapere che c’è sempre qualcuno che resta.</p>
+
+<p><em>(Dissolvenza.)</em></p>
+
+<br>
+<br>
+<br>
+
+<p><strong>QUADRO 10 – IL DIAVOLO</strong></p>
+
+<p><em>(Una lama di luce rossa. Il Diavolo entra elegante, moderno, sorride al pubblico in modo affascinante.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+<em>(larghissimo sorriso, tono amichevole)</em><br>
+Buonasera.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Tranquilli:<br>
+non sono qui per spaventarvi.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Non porto fiamme,<br>
+forconi,<br>
+orrori.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io porto…<br>
+soluzioni.</p>
+
+<p><em>(Cammina tra il pubblico, li osserva uno a uno come se leggesse i loro pensieri.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Sapete qual è il mio potere?</p>
+
+<p><strong>DIAVOLO</strong><br>
+Non convincervi del male.</p>
+
+<p><strong>DIAVOLO</strong><br>
+No.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Convincervi che il bene è inutile.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Che faticare non serve.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Che ascoltare gli altri<br>
+è tempo perso.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Che tanto…<br>
+niente cambia davvero.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io non vi dico:<br>
+“Fate cose terribili.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+Che noia,<br>
+che roba vecchia.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io vi dico:</p>
+
+<p><strong>DIAVOLO</strong><br>
+“Pensate a voi stessi.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+“Proteggetevi.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+“Non rischiate.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+“Non mostrate fragilità.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+“Non aprite il cuore.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+E piano piano…<br>
+vi chiudete.</p>
+
+<p><strong>DIAVOLO</strong><br>
+E quando vi chiudete…<br>
+io ho vinto.</p>
+
+<p><em>(Si ferma. Pausa. Lo sguardo entra nelle persone.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Indovinate chi è quella voce?</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Sempre io.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Ma tranquilli:</p>
+
+<p><strong>DIAVOLO</strong><br>
+sono bravo a far finta di essere voi.</p>
+
+<p><em>(Cammina lentamente verso il centro.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Il segreto è questo:</p>
+
+<p><strong>DIAVOLO</strong><br>
+non vi serve essere cattivi.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Vi basta essere…<br>
+indifferenti.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Basta fare un passo indietro<br>
+invece che avanti.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Basta tacere<br>
+quando qualcuno avrebbe bisogno di voi.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Basta scegliere la paura<br>
+invece del coraggio.</p>
+
+<p><em>(Si ferma. Si volta lentamente verso il pubblico, più serio, più vero.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Io non vi obbligo a niente.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io vi suggerisco.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io vi accompagno.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io vi alleggerisco.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Tolgo responsabilità…<br>
+tolgo domande…<br>
+tolgo cuore.</p>
+
+<p><strong>DIAVOLO</strong><br>
+E voi nemmeno ve ne accorgete.</p>
+
+<p><em>(Pausa lunga. Sguardo che taglia. Il sorriso torna.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Ma sapete qual è la mia unica debolezza?</p>
+
+<p><strong>DIAVOLO</strong><br>
+L’ascolto.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Quando qualcuno si ferma,<br>
+respira,<br>
+guarda un altro negli occhi<br>
+e sceglie comunque il bene…</p>
+
+<p><strong>DIAVOLO</strong><br>
+io perdo forza.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Tutta.</p>
+
+<p><em>(Sorriso più tirato, come una crepa.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Quindi…<br>
+se volete farmi un favore…</p>
+
+<p><strong>DIAVOLO</strong><br>
+non ascoltatevi troppo.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Non guardatevi dentro.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Non ascoltate gli altri.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Tenete tutto chiuso.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Ben chiuso.</p>
+
+<p><em>(Le luci si restringono su di lui. Sussurro finale.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+È così che si spegne la speranza.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Lentamente.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Dolcemente.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Senza che ve ne accorgiate.</p>
+
+<p><em>(Si ritira nell’ombra. Luci spente.)</em></p>
+
+<p><em>(Buio. Battito elettronico profondo.<br>
+Il coro entra ai lati, come un muro di schermi.<br>
+Luci a flash.)</em></p>
+
+<br>
+<br>
+<br>
+
+<p><strong>CORO – Tentazioni della società</strong><br>
+<em>(ritmo crescente)</em></p>
+
+<p><strong>CORO</strong><br>
+“Compra, consuma, vivi!”</p>
+
+<p><strong>CORO</strong><br>
+“Sempre di più, mai abbastanza!”</p>
+
+<p><strong>CORO</strong><br>
+“Se non possiedi, non vali!”</p>
+
+<p><strong>CORO</strong><br>
+“La felicità è nello shopping!”</p>
+
+<p><strong>CORO</strong><br>
+“Acquista ora, paga dopo!”</p>
+
+<p><strong>CORO</strong><br>
+“Non fermarti, il tempo è denaro!”</p>
+
+<p><strong>CORO</strong><br>
+“Il successo si misura in oggetti!”</p>
+
+<p><strong>CORO</strong><br>
+“Scorri, clicca, condividi!”</p>
+
+<p><strong>CORO</strong><br>
+“La vita è una storia da postare!”</p>
+
+<p><strong>CORO</strong><br>
+“Sempre online, sempre connessi!”</p>
+
+<p><strong>CORO</strong><br>
+“Like, follow, repeat!”</p>
+
+<p><strong>CORO</strong><br>
+“Più cose, più potere!”</p>
+
+<p><strong>CORO</strong><br>
+“Non respirare, compra!”</p>
+
+<p><strong>CORO</strong><br>
+“Se non compri, sei invisibile!”</p>
+
+<p><strong>CORO</strong><br>
+“Il tuo valore è il tuo carrello!”</p>
+
+<p><em>(Le voci si distorcono, diventano eco, poi si spengono di colpo.)</em></p>
+
+<p><em>(Ogni parola si affievolisce. Francesco è immobile al centro: non ha parlato durante il Diavolo,
+ma ora respira profondamente.)</em></p>
+
+<p><strong>FRANCESCO</strong><br>
+<em>(voce calma, come emergendo dal buio, osservando il coro ancora agitato)</em><br>
+Tutti corrono…<br>
+Tutti cercano…<br>
+Ma chi guarda davvero?</p>
+
+<p><em>(Il coro, a quella frase, si blocca di colpo. Il ronzio si spegne.)</em></p>
+
+<p><em>Entrata di Sorella Povertà</em></p>
+
+<p><em>(Da un lato entra Sorella Povertà. Passo lento, deciso, borsa piccola in spalla.
+La sua presenza è un contrasto netto:
+nessun rumore, nessuna fretta, nessuna pubblicità.)</em></p>
+
+<p><em>(Il Diavolo NON rientra: resta solo come “ombra”, un pensiero sospeso, un residuo nell’aria.
+Alcuni ragazzi del coro lo guardano come se fosse ancora lì ai margini della scena.)</em></p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Non ho bisogno di tutto quello<br>
+che vogliono farmi comprare…</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Ogni giorno scelgo<br>
+cosa davvero conta.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Rinuncio al superfluo…<br>
+perché il peso vero non è nelle cose,</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+ma in ciò che ci trattiene<br>
+dentro questo rumore.</p>
+
+<p><em>(Il coro, scosso dal monologo del Diavolo e illuminato da lei,
+resta sospeso un attimo… poi alcuni ricadono nel vecchio ritmo,
+come se il Diavolo li tirasse ancora:
+gesti da pubblicità, social, scroll compulsivo.)</em></p>
+
+<p><strong>FRANCESCO</strong><br>
+<em>(cammina lentamente intorno a lei, rispettoso;
+la tocca con una mano sulla spalla, un riconoscimento silenzioso)</em><br>
+Sorella Povertà…<br>
+e cosa resta,<br>
+se rinunci al mondo intero?</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+<em>(sorride, libera il gesto verso lo spazio vuoto,
+come allontanando il Diavolo rimasto in aria)</em><br>
+Resta leggerezza.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Resta tempo<br>
+per guardare,<br>
+ascoltare,<br>
+respirare.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Resta spazio<br>
+per chi non ha nulla.</p>
+
+<p><em>(Francesco guarda il pubblico, poi lei.
+L’ombra del Diavolo si ritrae del tutto:
+nel gesto, senza apparire.)</em></p>
+
+<p><strong>FRANCESCO</strong><br>
+<em>(inspira profondamente,
+le braccia che si aprono non per predicare,
+ma per includere)</em><br>
+Hai scelto di stare accanto agli ultimi,<br>
+senza rumore,<br>
+senza proclami…</p>
+
+<p><strong>FRANCESCO</strong><br>
+Non è facile, sai.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+<em>(china il capo,
+poi lo rialza con una piccola fiera dignità)</em><br>
+Non cerco applausi.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Non cerco titoli.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Solo un po’ di giustizia<br>
+nel mio piccolo,<br>
+e un cuore libero.</p>
+
+
+
+ </div>
+
+
+    <div class="battuta" data-personaggio="Frate Sole"> <p><strong>QUADRO 1: Frate Sole – l’influencer buono</strong><br><br>
+<em>(Un ragazzo entra correndo con il cellulare in mano. Fa selfie in tutte le direzioni. Ogni volta che scatta, parte un FLASH breve. Sorride esageratamente, cambia pose, fa cuoricini con le dita.)</em></p>
+
+<p><strong>CORO</strong> (mormorio ritmato, quasi un beat)<br>
+Like.<br>
+Scrolla.<br>
+Condividi.<br>
+Ancora.<br>
+Ancora.</p>
+
+<p><strong>INFLUENCER</strong> (senza nome, sorriso tirato, voce energica): Ciao ragazzi!<br>
+Nuovo vlog!<br>
+Oggi vi faccio vedere la mia vita perfetta!<br>
+Guardate che luce!<br>
+Che stile!<br>
+Che successo!<br>
+<em>(Altro selfie – FLASH)</em></p>
+
+<p><strong>VOCE NARRANTE</strong> (lieve, quasi poetica): Ma nessuno vedeva che,<br>
+dopo ogni flash…<br>
+arrivava un piccolo buio.<br>
+<em>(Il ragazzo abbassa il telefono per un istante: il suo sorriso cade. È stanco, vuoto. Poi riprende a sorridere forzatamente.)</em></p>
+
+<p><strong>INFLUENCER</strong>: Devo postare…<br>
+Devo crescere…<br>
+Devo essere qualcuno…<br>
+Perché senza like…<br>
+senza questa luce…<br>
+io non sono niente.<br>
+<em>(FLASH. Ma stavolta lui chiude gli occhi: il flash gli fa male.)</em></p>
+
+<p><em>(Entra Francesco)</em><br>
+<strong>FRANCESCO</strong> (calmo, fermo): Perché ti nascondi dietro tutta questa luce?<br>
+<strong>INFLUENCER</strong> (Il ragazzo sobbalza): Io? Nascondermi??<br>
+Ma guarda!<br>
+Io risplendo!<br>
+Sono famoso!<br>
+Tutti mi seguono!<br>
+<strong>FRANCESCO</strong> (gentile): Eppure…<br>
+tu non guardi mai nessuno negli occhi.<br>
+<em>(Silenzio. Il ragazzo abbassa lentamente il telefono.)</em></p>
+
+<p><strong>FRANCESCO</strong>: Perché sei triste?<br>
+<strong>INFLUENCER</strong> (quasi sussurrando): Perché…<br>
+nessuno mi vede davvero.<br>
+Mi vedono…<br>
+ma non mi guardano.<br>
+Ho tutto…<br>
+ma non ho nessuno.<br>
+Mi manca…<br>
+mi manca l’amore.<br>
+<strong>FRANCESCO</strong>: E cosa vorresti?<br>
+<strong>INFLUENCER</strong>: Vorrei…<br>
+che la mia luce servisse.<br>
+Non solo per farmi vedere…<br>
+ma per illuminare qualcuno.<br>
+<strong>FRANCESCO</strong> (sorridendo, toccandogli la mano): Allora vieni.<br>
+Smetti di inseguire la tua luce.<br>
+E aiutami a portare luce agli altri.<br>
+<em>(Gli prende il telefono. Lo spegne dolcemente.)</em><br>
+Da oggi…<br>
+ti chiamerò Frate Sole.<br>
+Perché la tua luce…<br>
+non viene dal flash.<br>
+Viene da qui. <em>(toccandogli il petto)</em></p>
+
+<p><em>(I due vengono illuminati da una luce dorata mentre il coro recita un verso del laudato si. I due escono insieme)</em><br>
+<strong>CORO</strong> (suono caldo, tutti insieme)<br>
+1^ versione «Laudato si’, mi’ Signore, cum tucte le tue creature,<br>
+spetialmente messor lo frate Sole,<br>
+lo qual è iorno, et allumini noi per lui.»<br>
+2^ versione «Laudato si’, mi’ Signore,<br>
+per frate Sole,<br>
+che allumina il giorno<br>
+e rischiara i nostri passi.»</p>
+</div>
+
+
+    <div class="battuta" data-personaggio="Sora Luna"> <p><strong>QUADRO 2 – Sora Luna (ragazza poetessa)</strong><br>
+Luci soffuse, toni freddi/blu. Al centro o leggermente a lato, Sora Luna è seduta con quaderno e penna, assorta, guarda<br>
+il cielo o una luce simbolica sopra di lei.</p>
+
+<p><strong>NARRATRICE:</strong><br>
+Seduta in disparte,<br>
+lascia che il cielo le entri nel cuore.<br>
+Ogni parola che scrive<br>
+è un passo dentro se stessa:<br>
+fragile, ma piena di sogni.<br>
+Non cerca applausi,<br>
+cerca una luce che la guidi.<br>
+E tu, luna,<br>
+con la tua luce povera e riflessa,<br>
+sai rischiarare ciò che il giorno non vede<br>
+e far brillare gli occhi dei sognatori.<br>
+Molti ti hanno guardata,<br>
+molti ti hanno amata:<br>
+Leopardi ti chiamava placida regina,<br>
+D’Annunzio ti vedeva compagna dei silenzi,<br>
+e Branduardi parla di te<br>
+come di una presenza luminosa e ambigua,<br>
+capace di affascinare e confondere.<br>
+E lei, sotto il tuo chiarore,<br>
+scrive in silenzio:<br>
+una voce lieve,<br>
+una luce povera che diventa ricchezza<br>
+quando qualcuno la guarda.</p>
+
+<br>
+
+<p><strong>SORA LUNA</strong><br>
+<em>(recita, voce lenta e intensa, seduta leggermente curva in avanti, come se proteggesse il quaderno e le<br>
+parole dentro di sé. Gesti con le mani delicati, che accompagnano la poesia. Carezza del quaderno o della penna<br>
+mentre parla, come a toccare i propri pensieri. Mani che si intrecciano o sfiorano il viso quando descrive emozioni<br>
+forti paura, desiderio, amore. Sguardo verso il cielo o lontano, spesso assente dal mondo intorno, simbolo della sua<br>
+interiorità e dei sogni. Respiro profondo, lento, che si percepisce come ritmo della sua mente e dei suoi sentimenti.)</em><br>
+<br>
+BRANO LA LUNA BRANDUARDI<br>
+Ho voglia di ammalarmi di te…<br>
+Come luce in tempesta. Brucia.<br>
+<em>(dopo BRUCIA, pausa breve, mani sul petto, occhi chiusi o sguardo basso,<br>
+respiro profondo)</em><br>
+<em>(leggero piegamento in avanti, mani che sfiorano il quaderno come protezione.)</em><br>
+Una voragine mi toglie il<br>
+respiro.<br>
+<em>(dopo “respiro.” per far sentire la sofferenza trattenuta.)</em><br>
+Un pensiero mi assale circonciso.<br>
+Un tale mi sussurra con lieve sospiro:<br>
+<em>(testa bassa, occhi chiusi, mani che si intrecciano, tremolio leggero se naturale)</em><br>
+Ahimè dolente cor mio, che io<br>
+Sola va bramando te. Brucia.<br>
+O cor mio arrossa in presenza di te.<br>
+Tieni stretto il mio malanno.<br>
+Con chiave per cor mio e tuo.<br>
+Occhi intrepidi con sol nell’animo.<br>
+Cor che mi sussulta in mal tuo.<br>
+<em>(mani aperte davanti al petto, leggero inchino del capo, occhi chiusi).</em><br>
+Fa ch’io muoia con sorriso tuo.<br>
+<em>(Pausa<br>
+dopo la frase per dare tempo al pubblico di percepire la profondità del sentimento.)</em><br>
+Fa tu deformare quest’amma in me<br>
+che ustiona ogni mio fievole respiro.<br>
+Che io non sappia nuotare.<br>
+<em>(inclinazione del corpo in avanti, mani che si lasciano cadere lentamente,<br>
+respirazione enfatizzata).</em><br>
+Permettimi<br>
+di perder lentamente il respiro mio.<br>
+Dimenticami nel tuo piacevole sospiro.<br>
+<em>(mani che si stringono al cuore, occhi chiusi)</em><br>
+Con odio e amor, voglio ammalarmi di te.<br>
+<em>(pausa)</em><br>
+Asseconda ogni mia voglia. Permettimi<br>
+di diventare la tua ancora di salvataggio.<br>
+Lascia che io sia la sola a cui darai<br>
+Il tuo malanno. Lascia che io trasformi<br>
+le sofferenze tue in gioia e amore.<br>
+Lascia il cor tuo custodito in me.</p>
+
+<p><em>(Piccola pausa. Francesco entra, si avvicina lentamente senza interromperla, osserva il quaderno.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(voce calma, sorridendo leggermente):</em><br>
+Che scrivi qui? Cos’è che ti prende così tanto il cuore?</p>
+
+<p><strong>SORA LUNA</strong> <em>(alzando lo sguardo, leggermente imbarazzata ma sincera):</em><br>
+Parlo… di qualcuno.<br>
+Di ciò che sento dentro.<br>
+Non so se è gioia o tormento…</p>
+
+<p><strong>FRANCESCO</strong> <em>(annuisce, ascolta con attenzione):</em><br>
+Vedo un cuore che brilla, anche nel dolore…<br>
+E come la luna illumina la notte, così le tue parole illuminano ciò che ti circonda.<br>
+Da oggi ti chiamerò Sora Luna,</p>
+
+<p><strong>SORA LUNA</strong> <em>(sorridendo timidamente, un po’ sorpresa):</em><br>
+Sora Luna…</p>
+
+<p><strong>FRANCESCO</strong><br>
+sì…. perché porti luce dove c’è buio e sogni dove altri non vedono.</p>
+
+<p><strong>SORA LUNA</strong><br>
+Mi piace…</p>
+
+<p><strong>FRANCESCO</strong>: Continua a scrivere… e lascia che il tuo cuore parli al mondo.</p>
+
+<p><em>(Piccola pausa poetica. Luci sfumano lentamente, la scena si chiude.)</em></p>
+
+<p><strong>CORO:</strong><br>
+Laudato si’, mi’ Signore, per sora Luna e le stelle:<br>
+in celu l’ài formate clarite et pretiose et belle.</p>
+</div>
+
+
+    <div class="battuta" data-personaggio="Sorelle Stelle"> <p><strong>QUADRO 3 – Sorelle Stelle:</strong><br>
+Le Stelle entrano in silenzio, ciascuna con un libro, un quaderno, appunti stampati. Si muovono lentamente, come un<br>
+firmamento che prende vita. Parlano tra loro e al pubblico, raccontando ciò che hanno scoperto studiando Buddha e<br>
+San Francesco. Il Francesco moderno entra e si siede ai margini, non protagonista. Ascolta in silenzio, come spettatore<br>
+privilegiato</p>
+
+<p><strong>STELLA 1</strong> <em>(guardando il proprio libro, stupita):</em><br>
+Più leggo… più mi sembra incredibile.<br>
+Due storie distanti…<br>
+due mondi lontani…<br>
+che però parlano la stessa lingua.</p>
+
+<p><strong>STELLA 2</strong> <em>(indicando le sue pagine):</em><br>
+Abbiamo studiato Siddhartha,<br>
+il giovane che divenne Buddha.<br>
+Un principe soffocato nell’abbondanza<br>
+che lasciò tutto per cercare la verità.</p>
+
+<p><strong>STELLA 1</strong> <em>(aprendo il proprio quaderno):</em><br>
+E poi abbiamo letto di un altro giovane…<br>
+questa volta ad Assisi.<br>
+Un ragazzo ricco, vivace, pieno di sogni…<br>
+che un giorno sentì un richiamo<br>
+più forte del denaro<br>
+e lasciò tutto.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Siddhartha vide il dolore del mondo<br>
+e non poté più voltarsi dall’altra parte.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Francesco vide la sofferenza dei poveri<br>
+e non poté più vivere come prima.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Entrambi figli amati.<br>
+Entrambi destinati a una vita comoda.<br>
+Entrambi… in cammino verso qualcos’altro.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Le nostre letture non dicono<br>
+che fossero identici.<br>
+No.<br>
+Ognuno seguì il proprio sentiero.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Ma nessuno dei due<br>
+volle imporre la sua strada agli altri.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Entrambi cercavano solo<br>
+un modo per vivere bene,<br>
+in pace,<br>
+con rispetto per ogni creatura.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Nel Dharma abbiamo letto:<br>
+“Non fare male a nessun essere vivente.”</p>
+
+<p><strong>STELLA 1:</strong><br>
+E nella vita di Francesco:<br>
+“Chi ama la creatura, ama il Creatore.”</p>
+
+<p><strong>STELLA 2:</strong><br>
+Due frasi diverse.<br>
+Due mondi diversi.<br>
+Stessa luce.</p>
+
+<p><em>(Le ragazze sollevano i libri verso l’alto, come fossero stelle che brillano.)</em></p>
+
+<p><strong>STELLA 1:</strong><br>
+Abbiamo scoperto<br>
+che la bontà non ha religione.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Che la compassione non ha passaporto.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Che la saggezza non appartiene a una sola via.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Abbiamo scoperto<br>
+che gli uomini possono incontrarsi<br>
+anche senza assomigliarsi.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Possono rispettarsi<br>
+senza convincersi.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Possono brillare<br>
+senza oscurare l’altro.</p>
+
+<p>Le luci si alzano, il cielo si illumina.</p>
+ </div>
+
+
+
+    <div class="battuta" data-personaggio="Sorella Vento"> <p><strong>QUADRO 4 – Frate Vento</strong><br>
+<em>(Le Stelle sono ancora in scena, con i loro libri al petto. La luce si muove lentamente, come se l’aria stesse cambiando.<br>
+Da un lato entra Sorella Vento, Amira, senza clamore: porta uno zaino leggero, qualche foglio, magari un piccolo taccuino. Avanza come chi ascolta prima di parlare. Una brezza leggera attraversa lo spazio.)</em></p>
+
+<p><strong>AMIRA</strong> <em>(sorridendo, al pubblico e alle Stelle):</em><br>
+Scusate se arrivo ora.<br>
+Ho sentito le vostre parole<br>
+e mi sono fermata a… respirarle.<br>
+A volte basta un soffio<br>
+per capire che non siamo soli.<br>
+<em>(con semplicità)</em> scusate, non mi sono presentata.<br>
+Mi chiamo Amira.<br>
+Vengo da un’altra storia,<br>
+un altro orizzonte,<br>
+ma la stessa sete.<br>
+Nella mia fede si dice:<br>
+«Dio ha fatto di voi popoli e tribù<br>
+perché vi conosceste,<br>
+non per separarvi.»<br>
+<em>(sollevando il taccuino)</em><br>
+qui ci appunto le cose che il vento mi insegna.<br>
+Perché il vento…<br>
+non ha confini, non ha padroni,<br>
+non chiede permesso.<br>
+Passa, tocca, scuote.<br>
+E poi riparte.<br>
+Ed ho imparato, che:<br>
+la libertà è un dono<br>
+ma anche una responsabilità.<br>
+Che lo spirito non è aria ferma:<br>
+si muove, respira, accende.<br>
+Che se qualcosa non va<br>
+non possiamo restare immobili<br>
+come foglie bagnate.<br>
+Il mondo è casa nostra.</p>
+
+<p><em>(Francesco ascolta da un angolo. Fa un passo avanti, ma non interrompe, Amira rivolgendosi alle stelle.)</em></p>
+
+<p><strong>AMIRA</strong>:<br>
+Io non porto verità.<br>
+Porto un invito.<br>
+A guardare più lontano,<br>
+a proteggere ciò che respira,<br>
+a non aver paura di cambiare.<br>
+<em>(con dolcezza)</em>:<br>
+Ogni fede<br>
+ha la sua musica. E oggi…<br>
+tutte suonano insieme.</p>
+
+<p><em>(Un momento di silenzio. Francesco moderno si avvicina, emozionato.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Vi ho ascoltati.<br>
+Tutti.<br>
+Ognuno diverso.<br>
+Ognuno prezioso.<br>
+E mi accorgo che…<br>
+non siete solo compagni di viaggio.<br>
+Siete più di questo.<br>
+Voi, che cercate la verità nella gentilezza…<br>
+e illuminate senza pretendere…<br>
+sarete, Sorelle Stelle.<br>
+E tu <em>(guardando Amira)</em><br>
+che arrivi come aria nuova<br>
+e ci ricordi che lo spirito è movimento…<br>
+sei Frate Vento della Libertà.</p>
+
+<p><em>(Amira abbassa il capo, grata. Le Stelle sorridono. Nessun tono religioso esclusivo: solo riconoscimento.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(piano)</em>:<br>
+Se vi va…<br>
+camminiamo insieme.<br>
+Non per diventare uguali,<br>
+ma per rispettare le differenze<br>
+come si rispettano i venti<br>
+e le stelle.</p>
+
+<p><em>(Una luce attraversa la scena come un soffio. Il quadro si chiude con i quattro giovani uniti: non simili, ma vicini.)</em></p>
+
+<p><strong>CORO</strong>:<br>
+«Laudato si’, mi’ Signore,<br>
+per sora Luna e le stelle,<br>
+in celu l’ài formate<br>
+clarite et pretiose et belle.<br>
+E per Frate Vento,<br>
+et per aere et nubilo<br>
+et sereno et onne tempo,<br>
+per lo quale a le tue creature dài sostentamento.»</p>
+</div>
+
+<div class="battuta" data-personaggio="Frate Fuoco"> <p><strong>QUADRO 5 – Frate Fuoco – L’Uomo che Brucia e Illumina</strong><br>
+<em>(Voce Narrante fuori campo, calma ma intensa)</em></p>
+
+<p><strong>VOCE NARRANTE</strong>:<br>
+«A volte la vita accende in noi luci che non abbiamo chiesto.<br>
+Piccole fiamme che ci rincorrono:<br>
+paure, rabbie, ricordi che bruciano ancora.<br>
+E quando cerchiamo il buio per riposare,<br>
+una candela si accende dentro di noi<br>
+e illumina ciò che non volevamo vedere.<br>
+Ma anche la luce più inquieta<br>
+può diventare guida,<br>
+se qualcuno ci insegna a guardarla senza tremare.<br>
+Un cuore impaurito può trovare pace<br>
+quando smette di fuggire dalla propria fiamma.<br>
+E allora, quando il fuoco interiore inizia a vibrare,<br>
+tutto diventa possibile:<br>
+la paura, la lotta… e la rinascita.<br>
+Ecco a voi…<br>
+il viaggio di Frate Fuoco.»</p>
+
+<p><em>(La scena è buia. Al centro scena c’è una candela accesa. Silenzio. Si sente un respiro affannoso, quasi un singhiozzo trattenuto. Un ragazzo entra di corsa, guardandosi alle spalle come se qualcuno o qualcosa lo inseguisse. Si ferma davanti alla fiamma, pallido, agitato.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Non… non dovrebbe esserci luce.<br>
+Non adesso.</p>
+
+<p><em>(Si passa una mano tra i capelli, disperato.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+E invece eccola.<br>
+Una fiamma.<br>
+Sempre lei.<br>
+Sempre io.<br>
+Sono scappato…<br>
+Da me stesso.<br>
+Dalla mia rabbia che mi morde,<br>
+dal fuoco che porto dentro e che non mi lascia mai in pace.</p>
+
+<p><em>(Si avvicina alla candela con paura.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Perché torni?<br>
+Perché non mi lasci?<br>
+Perché devo sempre ardere?</p>
+
+<p><em>(Prova a spegnere la candela con un soffio. La fiamma tremola, ma non si spegne. Il ragazzo indietreggia, impaurito.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Non si spegne.<br>
+Nemmeno adesso.<br>
+Nemmeno quando prego che finisca tutto…<br>
+quando prego di non fare più male a nessuno.<br>
+Ho parlato troppo forte, ho ferito senza volerlo…<br>
+e poi ho promesso, promesso, promesso ancora:<br>
+“Mai più. Mai più.”<br>
+Ma la fiamma…<br>
+la fiamma mi segue come un’ombra che brucia.</p>
+
+<p><em>(Si inginocchia, guardando la candela come fosse uno specchio.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Che ci faccio con te?<br>
+Che ci faccio con questo fuoco che mi divora?<br>
+Non so più se sono vivo…<br>
+o se sto solo incendiando tutto quello che mi circonda.</p>
+
+<p><em>(Prova di nuovo a spegnerla. Agita la mano, soffia, quasi piange. Niente.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Perché non muori?<br>
+Perché non mi lasci tregua?<br>
+Io… io voglio solo pace.<br>
+Solo pace.</p>
+
+<p><em>(Entra lentamente Francesco, come se fosse luce che cammina. Non corre, non è agitato. È sereno, presente. Si ferma accanto al ragazzo senza toccarlo.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Chi sei?<br>
+E perché tremi davanti a una fiamma così piccola?</p>
+
+<p><em>(Il ragazzo alza lo sguardo verso di lui, ancora scosso, incapace di rispondere. Con un gesto lentissimo, quasi un rito, Francesco prende la candela dalle mani del ragazzo. La osserva un istante… poi soffia con calma. La fiamma si spegne al primo colpo. Subito la luce della scena si addolcisce. Il ragazzo respira, all’improvviso più leggero.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Sei… riuscito a spegnerla.</p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Non era la fiamma a essere forte.<br>
+Eri tu… che avevi paura.<br>
+La paura fa sembrare il fuoco più grande di quello che è.<br>
+Ma un cuore guidato… può far pace anche con le sue scintille.</p>
+
+<p><em>(Appoggia una mano rassicurante sulla spalla del ragazzo.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Sai come voglio chiamarti?<br>
+Frate Fuoco.</p>
+
+<p><em>(Il ragazzo lo guarda, sorpreso.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Non perché tu abbia distrutto…<br>
+ma perché hai avuto il coraggio di guardare le tue fiamme negli occhi.<br>
+Perché hai scelto di non scappare più.<br>
+Perché dentro di te il fuoco può scaldare, non solo bruciare.<br>
+E oggi…<br>
+hai fatto il primo passo verso la pace.</p>
+
+<p><em>(Il ragazzo sorride piano. Il suo respiro è calmo. La scena si schiarisce con una luce dorata.)</em></p>
+
+<p><strong>RAGAZZO</strong>:<br>
+Frate Fuoco…<br>
+mi piace.<br>
+Sì.<br>
+Voglio essere questo.</p>
+
+<p><strong>CORO</strong>:<br>
+«Laudato si’, mi’ Signore,<br>
+per frate Focu,<br>
+per lo quale ennallumini la nocte,<br>
+ed ello è bello<br>
+et robustoso<br>
+et forte.»</p>
+
+<p><em>(Luce dorata. Il ragazzo e Francesco restano immobili accanto alla candela spenta.)</em></p>
+</div>
+
+ <div class="battuta" data-personaggio="Sora Acqua"> <p><strong>QUADRO 6 – Sorella Acqua – La Ragazza che Scorre e Accoglie</strong><br>
+<em>(Voce Narrante fuori campo, calma ma intensa)</em></p>
+
+<p><strong>VOCE NARRANTE</strong>:<br>
+A volte la vita ci travolge con correnti che non abbiamo scelto.<br>
+Piccole tempeste di rabbia, preoccupazioni, pensieri agitati che ci scuotono.<br>
+E quando cerchiamo un momento di pace,<br>
+una fonte d’acqua si accende dentro di noi,<br>
+e ci mostra la via per chiarire e accogliere.<br>
+Ma anche il cuore più inquieto<br>
+può diventare sereno,<br>
+se qualcuno ci insegna a lasciar scorrere ciò che ci turba.<br>
+Un’anima agitata può trovare armonia<br>
+quando smette di opporsi al proprio flusso interiore.<br>
+E allora, quando la calma interiore inizia a scorrere,<br>
+tutto diventa possibile:<br>
+la gentilezza, la comprensione… e la pace.</p>
+
+<p><em>(Luce azzurra soffusa. Due ragazzi sono già in scena, agitati, rivolti l’uno verso l’altro. Francesco cerca di calmarli, una ragazza presente in scena non interviene.)</em></p>
+
+<p><strong>RAGAZZO 1</strong> <em>(arrabbiato)</em>:<br>
+Non capisci mai! Ogni volta è la stessa storia!</p>
+
+<p><strong>RAGAZZO 2</strong> <em>(irritato)</em>:<br>
+E tu pensi di avere sempre ragione!<br>
+Non ascolti mai!</p>
+
+<p><strong>FRANCESCO</strong> <em>(cercando di calmare)</em>:<br>
+Ehi, basta… non serve urlare… proviamo a parlare.</p>
+
+<p><strong>RAGAZZO 1</strong>:<br>
+Parlare? Non serve a niente!</p>
+
+<p><strong>RAGAZZO 2</strong>:<br>
+Sì, è inutile!</p>
+
+<p><em>(La discussione continua. La ragazza, calma, nota e si avvicina a una piccola fonte d’acqua o ciotola posta al centro del palco. Inizia a giocare con l’acqua tra le mani, sorride, fa cadere l’acqua delicatamente. Poi decide di intervenire.)</em></p>
+
+<p><strong>RAGAZZA</strong> <em>(chiara, ferma)</em>:<br>
+Basta.</p>
+
+<p><em>(Silenzio immediato. I due si voltano.)</em></p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Guardate lei.<br>
+L'acqua.</p>
+
+<p><em>(Solleva un po' d'acqua con le mani, la lascia cadere lentamente.)</em></p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Punteggio.<br>
+Non urlare.<br>
+Non si mette a discutere con i sassi che trova.<br>
+Non si vendica delle rive troppo strette.<br>
+Non chiedo scusa per essere limpida.</p>
+
+<p><em>(Pausa. Li guarda, più dolce.)</em></p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Emily Dickinson diceva:<br>
+«L'acqua che passa non chiede permesso. Va.<br>
+E nel suo andare crea la strada».</p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Siate come lei…<br>
+scorre libera, chiara e fresca.<br>
+E proprio perché non si irrigidisce,<br>
+arriva lontano.<br>
+Ovunque.<br>
+Sempre.</p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Voi due…<br>
+state facendo l'opposto.<br>
+State rimanendo fermi nei vostri muri.<br>
+Nelle vostre versioni dei fatti.<br>
+Nei vostri "ho ragione io".<br>
+E sapete qual è il problema?</p>
+
+<p><em>(Li osserva con un mezzo sorriso triste.)</em></p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Le persone non si rompono perché litigano.<br>
+Si rompono quando smettono di scorrere.<br>
+Quando tengono tutto dentro<br>
+come acqua chiusa in una bottiglia agitata…<br>
+prima o poi…<br>
+scoppia.</p>
+
+<p><em>(I due ragazzi la guardano, colpiti.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(calmo, curioso davvero)</em>:<br>
+E tu come fai…<br>
+a restare così?<br>
+Così limpida?</p>
+
+<p><strong>RAGAZZA</strong>:<br>
+TS Eliot diceva:<br>
+«Nel silenzio dell'acqua impariamo ad ascoltare noi stessi».</p>
+
+<p><strong>RAGAZZA</strong>:<br>
+Quando qualcosa mi ferisce,<br>
+metto le mani sotto l'acqua<br>
+e lascio andare.<br>
+Il resto…<br>
+lo chiarisco.<br>
+Non per forza subito,<br>
+non per forza perfetta.<br>
+Ma scorro.<br>
+Non resto ferma.<br>
+Mai.</p>
+
+<p><strong>FRANCESCO</strong> <em>(allegramente)</em>:<br>
+Da oggi ti chiameremo Sorella Acqua.<br>
+Perché sai passare in mezzo alle tempeste<br>
+senza diventare tempesta.<br>
+Perché pulisci senza ferire.<br>
+Perché hai scelto di scorrere<br>
+portando pace e armonia.</p>
+<p><i>(La ragazza sorride sorpresa e felice. I ragazzi, ancora riflessivi, annuiscono lentamente. La luce azzurra si
+intensifica, avvolgendo tutti.)</i></p>
+
+
+</div>
+
+<div class="battuta" data-personaggio="Sora Madre Terra"> <p><strong>QUADRO 7 – SORA MADRE TERRA</strong></p>
+
+<p><em>Tra città grigie e alberi spogli,<br>
+una donna semina semi di luce.<br>
+Mani segnate dal tempo,<br>
+cuore aperto a chi è stanco,<br>
+a chi cerca riparo,<br>
+a chi ha smarrito la strada.<br>
+Germogli verdi nascono tra rifiuti,<br>
+bambini raccolgono speranza,<br>
+cani e uccelli trovano cura,<br>
+ogni creatura è importante.<br>
+La sobrietà è gioia,<br>
+la cura è rivoluzione,<br>
+e nel silenzio della terra arida<br>
+fiorisce la vita.<br>
+In questo quadro, una piccola storia diventa una grande lezione: la Terra si salva solo se impariamo<br>
+a crederci insieme.</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Io vengo da un paese del Sud.<br>
+Sono cresciuto tra i filari di pomodori e il profumo del grano.<br>
+Una terra bella, bellissima… ma anche ferita.<br>
+Avete mai sentito parlare della Terra dei Fuochi?<br>
+Ecco, quella è casa mia.<br>
+Terra che dovrebbe dare vita<br>
+e invece sputiamo veleno dall’alba alla notte.<br>
+La chiamiamo “terra”, ma a volte sembra un pianto.</p>
+
+<p><strong>AFRICA</strong>:<br>
+Io vengo dall’altra parte del mare.<br>
+Là dove la terra non piange:<br>
+si spacca.<br>
+Dove il sole non scalda:<br>
+brucia.<br>
+La gente dice “Africa” come fosse tutta uguale,<br>
+ma il mio villaggio è una manciata di capanne<br>
+e un pozzo che si svuota troppo in fretta.</p>
+
+<p><em>(Si guardano, con curiosità sincera.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Da noi l’acqua c’è.<br>
+A volte troppa, quando allaga tutto.<br>
+Ma non sappiamo più far crescere le cose come una volta.<br>
+Il terreno è stanco, avvelenato…<br>
+E noi pure.</p>
+
+<p><strong>AFRICA</strong>:<br>
+Da noi l’acqua non c’è quasi mai.<br>
+Eppure non so come spiegarlo<br>
+un seme, anche piccolo,<br>
+a volte decide di provarci lo stesso.<br>
+Gli basta un dito di pioggia,<br>
+un pezzo d’ombra,<br>
+una mano che crede in lui.<br>
+Forse perché la nostra gente,<br>
+anche senza niente,<br>
+non smette di sperare.</p>
+
+<p><em>(La donna africana si inginocchia, apre il panno, mostra una manciata di terra arida.)</em></p>
+
+<p><strong>AFRICA</strong>:<br>
+Guarda questa terra.<br>
+Non ha colore, non ha forza.<br>
+Ma se ci metti un seme…<br>
+se gli parli…<br>
+se gli dai l’unica goccia che hai…<br>
+lui ti risponde.<br>
+Sempre.<br>
+Non perché è magico,<br>
+ma perché noi non ci arrendiamo.</p>
+
+<p><em>(Francesco la osserva, colpito.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Sapessi quante volte, da noi,<br>
+abbiamo dimenticato di “parlare” alla terra.<br>
+O peggio, l’abbiamo trattata come un sacco per buttare scarti.<br>
+Per anni.<br>
+Una volta, se piantavi un seme, bastava aspettare.<br>
+Ora bisogna pregare che non sia finito sotto qualche rifiuto tossico.<br>
+La mia gente è stanca.<br>
+E anche un po’ arrabbiata.</p>
+
+<p><strong>AFRICA</strong>:<br>
+Da noi la stanchezza non serve.<br>
+Nessuno ti regala niente.<br>
+E allora lavoriamo,<br>
+cantiamo,<br>
+ridiamo,<br>
+teniamo i bambini stretti<br>
+come fossero acqua.<br>
+Siamo poveri, è vero…<br>
+ma poveri non vuol dire morti.<br>
+E nemmeno arrabbiati.<br>
+Vuol dire che dobbiamo inventarci la vita ogni giorno.</p>
+
+<p><em>(Silenzio. Si siedono vicini.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Sai…<br>
+quando ti guardo, io vedo qualcosa che qui, in Europa,<br>
+abbiamo quasi dimenticato.<br>
+La forza.<br>
+La leggerezza.<br>
+Il coraggio di farcela comunque.<br>
+Sei nera, sì…<br>
+ma quello che vedo non è il colore.<br>
+È la luce.<br>
+Quella che noi, bianchi, abbiamo un po’ perso per strada.</p>
+
+<p><strong>AFRICA</strong>:<br>
+Il colore è solo pelle.<br>
+La storia invece la senti dentro.<br>
+Noi neri sappiamo cosa vuol dire<br>
+camminare con il sole sulla testa<br>
+e il mondo sulle spalle.<br>
+Per questo un seme,<br>
+anche nell’arsura,<br>
+a volte decide di nascere.<br>
+Perché sente che non è solo.</p>
+
+<p><em>(Si alzano. L’africana porge un seme a Francesco.)</em></p>
+
+<p><strong>AFRICA</strong>:<br>
+Tienilo.<br>
+È piccolo, ma è testardo.</p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Come te.</p>
+
+<p><strong>AFRICA</strong>:<br>
+Come noi.</p>
+
+<p><strong>AFRICA</strong>:<br>
+La terra cambia.<br>
+Le stagioni cambiano.<br>
+Le persone cambiano.<br>
+Ma un seme…<br>
+quello no.<br>
+Un seme nasce per crescere.<br>
+E cresce solo<br>
+se qualcuno ci crede.</p>
+
+<p><em>(Si guardano. Francesco stringe il seme tra le dita.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(con emozione sincera)</em>:<br>
+Grazie…<br>
+di cuore.<br>
+Tu, con niente, mi hai insegnato tutto.<br>
+E sai come ti voglio chiamare da adesso?<br>
+Sora Madre Terra.<br>
+Perché tu… tu fai nascere la vita anche dove io credevo fosse impossibile.</p>
+
+<p><em>(L’africana sorride, sorpresa ma fiera. Si abbracciano.)</em></p>
+
+<p><strong>CORO</strong>:<br>
+Laudato si’, mi’ Signore, per sora nostra matre Terra,<br>
+la quale ne sustenta et governa,<br>
+et produce diversi fructi con coloriti flori et herba.</p>
+
+</div>
+
+<div class="battuta" data-personaggio="Il Lupo (spacciatore)"> <p><strong>QUADRO 8 – FRATELLO LUPO – Spacciatore – Dipendenza</strong></p>
+
+<p><em>(Il Lupo entra lentamente. Cappuccio basso, mani in tasca. Si ferma. Guarda il pubblico come se potesse morderlo.)</em></p>
+
+<p><strong>IL LUPO</strong>:<br>
+E che tenit a guardà?<br>
+Forz giratev a chellata parte.</p>
+
+<p><strong>IL LUPO</strong>:<br>
+Lo so perché mi guardate così.<br>
+Paur.<br>
+Schif.<br>
+Giudizio.<br>
+Tenit semp a stessa faccia.<br>
+Tant nun fa mal…<br>
+fa abitudin.</p>
+
+<p><strong>IL LUPO</strong>:<br>
+Me chiamman<br>
+Delinquent.<br>
+Animal.<br>
+Animal… sì.<br>
+Questo ve lo concedo.</p>
+
+<p><strong>IL LUPO</strong>:<br>
+Ecco, nu lup…<br>
+Sì… me piace.</p>
+
+<p><strong>LUPO</strong>:<br>
+Perché nu lup, alla fine, che fa?<br>
+Morde per vivere.<br>
+Pe nun esser mangiat.</p>
+
+<p><strong>LUPO</strong>:<br>
+Io nun so’ nat lup,<br>
+ce songh addiventato.<br>
+Per fame.</p>
+
+<p><strong>LUPO</strong>:<br>
+Perché quando nun tien nisciun ca te tene a capa dritta,<br>
+te la tieni come capita.</p>
+
+<p><strong>LUPO</strong>:<br>
+E quann’ a famme addeventa troppa…<br>
+non guardi più cosa addenti.<br>
+Mordi e basta.</p>
+
+<p><em>(Sorride amaro.)</em></p>
+
+<p><strong>LUPO</strong>:<br>
+O sapit comm’ s’accummencia?</p>
+
+<p><strong>LUPO</strong>:<br>
+Non è che un giorno ti svegli e pensi:<br>
+“Mo’ vendo morte.”<br>
+No.</p>
+
+<p><strong>LUPO</strong>:<br>
+Prima la vivi.<br>
+A respir.</p>
+
+<p><strong>LUPO</strong>:<br>
+Te la buttano addosso gli altri:<br>
+na casa ca car a piezz,<br>
+nu pat ca va fuienn,<br>
+na mamma ca chiagne,<br>
+na scol ca nun te vò,<br>
+una città che ti usa.</p>
+
+<p><strong>LUPO</strong>:<br>
+Allor tu guard’ o munn<br>
+e spier’ ca o munn guarda a te.</p>
+
+<p><strong>LUPO</strong>:<br>
+Ma nel frattempo sei diventato invisibile.</p>
+
+<p><strong>LUPO</strong>:<br>
+E agli invisibili,<br>
+prima o poi,<br>
+qualcuno gli propone un affare.</p>
+
+<p><strong>LUPO</strong>:<br>
+E tu?<br>
+Ce car.</p>
+
+<p><strong>LUPO</strong>:<br>
+Pecché finalmente vali qualcosa.<br>
+Finalmente quacchedun te dic:<br>
+“Tu sierv.”</p>
+
+<p><strong>LUPO</strong>:<br>
+E chell’ è a fine toia.</p>
+
+<p><strong>LUPO</strong>:<br>
+E alla fine addevient<br>
+quel prodotto perfetto<br>
+di tutto quello che non avete voluto vedere.</p>
+
+<p><strong>LUPO</strong>:<br>
+E mò…<br>
+giratev a chellata parte,<br>
+comme avit fatto fino a mo’.</p>
+
+<p><em>(All’improvviso urla, feroce.)</em></p>
+
+<p><strong>LUPO</strong>:<br>
+FORZ’!<br>
+GIRATEVI!</p>
+
+<p><strong>LUPO</strong>:<br>
+Continuate a nun me vedé.<br>
+Continuate a nun vedé.</p>
+
+<p><em>(Pausa. Voce bassa, tremante sotto la rabbia.)</em></p>
+
+<p><strong>LUPO</strong>:<br>
+Io so’ nat lup…<br>
+e lup aggia murì.</p>
+
+<p><strong>LUPO</strong>:<br>
+Chest’ è a strada mia.<br>
+Chest’ è a vita ca me so’ scigliuto…<br>
+o forse è a vita ca ha scigliuto a me.</p>
+
+<p><em>(Si avvicina al pubblico, voce graffiata, dolce e crudele allo stesso tempo.)</em></p>
+
+<br>
+<br>
+<br>
+
+<p><strong><i>Il resto della parte del lupo è situata nel paragrafo dedicato al diavolo (baci acquosi)</i></strong></p>
+
+</div>
+
+ <div class="battuta" data-personaggio="Sorella Morte Corporale"> <p><strong>QUADRO 9 – SORELLA MORTE CORPOREA</strong></p>
+
+<p><strong>MARTINA</strong>:<br>
+C’è un pezzo del Cantico delle Creature che parla di una cosa di cui spesso non vogliamo parlare:<br>
+la morte.</p>
+
+<p><strong>MARTINA</strong>:<br>
+Ma lo fa in modo sorprendente.</p>
+
+<p><strong>MARTINA</strong>:<br>
+San Francesco la chiamava “sorella”.<br>
+Non per spaventare,<br>
+ma per ricordare che la vita ha tanti momenti,<br>
+e anche l’ultimo fa parte del viaggio.</p>
+
+<p><strong>MARTINA</strong>:<br>
+Oggi non vogliamo rappresentare quel Francesco che predica,<br>
+ma guardare questo tema con occhi moderni,<br>
+quelli di chi ogni giorno accompagna le persone con rispetto,<br>
+cura e delicatezza.</p>
+
+<p><strong>MARTINA</strong>:<br>
+Una figura che non fa paura,<br>
+perché porta presenza,<br>
+ascolto,<br>
+gentilezza.</p>
+
+<p><strong>MARTINA</strong>:<br>
+E così, in questo quadro,<br>
+“Sorella Morte” diventa una donna che lavora in un hospice.</p>
+
+<p><strong>MARTINA</strong>:<br>
+Una persona normale,<br>
+che con piccoli gesti sa portare un po’ di luce<br>
+proprio quando sembra che la luce si stia abbassando.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+<em>(serena)</em><br>
+Sapete qual è la cosa più sorprendente del mio lavoro?</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Che non è affatto triste come sembra da fuori.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Io lavoro in un posto dove le persone arrivano<br>
+quando sono molto, molto stanche.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+E il mio compito non è parlare di cose difficili…<br>
+ma farle stare comode,<br>
+farle sentire ascoltate,<br>
+accompagnarle con gentilezza.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+A volte basta un gesto piccolissimo:<br>
+sistemare un cuscino,<br>
+portare un bicchiere d’acqua,<br>
+restare seduti due minuti a parlare<br>
+del cane,<br>
+della scuola,<br>
+del meteo…</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+È un lavoro che parla più di vita<br>
+che di tutto il resto.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Tempo fa ho letto una frase<br>
+scritta da un uomo vissuto tantissimi anni fa.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Un tipo strano,<br>
+ma bello.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Lui diceva che la morte…<br>
+era una sorella.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Io da ragazza l’ho sempre trovata una frase assurda.<br>
+“Una sorella?<br>
+Ma come ti viene?”</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Poi ho iniziato a lavorare qui.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+E ho capito che quella frase<br>
+non parlava di paura.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Parlava di fiducia.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Perché la morte,<br>
+vista da vicino<br>
+e con le persone giuste accanto,<br>
+non somiglia a un mostro.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Somiglia più a un passaggio,<br>
+a un momento in cui qualcuno ti tiene la mano<br>
+quando tu non hai più voglia<br>
+di fare tutto da solo.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Vi è mai capitato di fare compagnia<br>
+a qualcuno che non stava tanto bene?</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Anche solo un raffreddore…<br>
+o una nonna stanca,<br>
+o un amico giù.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Ecco.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Quando ci siete,<br>
+quando ascoltate,<br>
+quando fate una battuta per alleggerire…<br>
+state facendo un pezzo del mio lavoro.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+State portando speranza.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Questa è Sorella Morte,<br>
+una parola strana per dire<br>
+che nessuno fa il viaggio da solo.</p>
+
+<p><strong>OPERATRICE</strong>:<br>
+Che fino all’ultimo tratto,<br>
+quando saremo vecchissimi, spero,<br>
+ci sarà sempre qualcuno a darci una mano.</p>
+
+<p><em>(Si siede, sistema la coperta con cura.)</em></p>
+
+<p><strong>OPERATRICE</strong>:<br>
+E alla fine…<br>
+la speranza è proprio questa:<br>
+sapere che c’è sempre qualcuno che resta.</p>
+
+<p><em>(Dissolvenza.)</em></p>
+
+</div>
+
+ <div class="battuta" data-personaggio="Il Diavolo"> <p><strong>QUADRO 10 – IL DIAVOLO</strong></p>
+
+<p><em>(Una lama di luce rossa. Il Diavolo entra elegante, moderno, sorride al pubblico in modo affascinante.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+<em>(larghissimo sorriso, tono amichevole)</em><br>
+Buonasera.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Tranquilli:<br>
+non sono qui per spaventarvi.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Non porto fiamme,<br>
+forconi,<br>
+orrori.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io porto…<br>
+soluzioni.</p>
+
+<p><em>(Cammina tra il pubblico, li osserva uno a uno come se leggesse i loro pensieri.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Sapete qual è il mio potere?</p>
+
+<p><strong>DIAVOLO</strong><br>
+Non convincervi del male.</p>
+
+<p><strong>DIAVOLO</strong><br>
+No.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Convincervi che il bene è inutile.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Che faticare non serve.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Che ascoltare gli altri<br>
+è tempo perso.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Che tanto…<br>
+niente cambia davvero.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io non vi dico:<br>
+“Fate cose terribili.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+Che noia,<br>
+che roba vecchia.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io vi dico:</p>
+
+<p><strong>DIAVOLO</strong><br>
+“Pensate a voi stessi.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+“Proteggetevi.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+“Non rischiate.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+“Non mostrate fragilità.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+“Non aprite il cuore.”</p>
+
+<p><strong>DIAVOLO</strong><br>
+E piano piano…<br>
+vi chiudete.</p>
+
+<p><strong>DIAVOLO</strong><br>
+E quando vi chiudete…<br>
+io ho vinto.</p>
+
+<p><em>(Si ferma. Pausa. Lo sguardo entra nelle persone.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Indovinate chi è quella voce?</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Sempre io.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Ma tranquilli:</p>
+
+<p><strong>DIAVOLO</strong><br>
+sono bravo a far finta di essere voi.</p>
+
+<p><em>(Cammina lentamente verso il centro.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Il segreto è questo:</p>
+
+<p><strong>DIAVOLO</strong><br>
+non vi serve essere cattivi.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Vi basta essere…<br>
+indifferenti.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Basta fare un passo indietro<br>
+invece che avanti.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Basta tacere<br>
+quando qualcuno avrebbe bisogno di voi.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Basta scegliere la paura<br>
+invece del coraggio.</p>
+
+<p><em>(Si ferma. Si volta lentamente verso il pubblico, più serio, più vero.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Io non vi obbligo a niente.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io vi suggerisco.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io vi accompagno.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Io vi alleggerisco.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Tolgo responsabilità…<br>
+tolgo domande…<br>
+tolgo cuore.</p>
+
+<p><strong>DIAVOLO</strong><br>
+E voi nemmeno ve ne accorgete.</p>
+
+<p><em>(Pausa lunga. Sguardo che taglia. Il sorriso torna.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Ma sapete qual è la mia unica debolezza?</p>
+
+<p><strong>DIAVOLO</strong><br>
+L’ascolto.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Quando qualcuno si ferma,<br>
+respira,<br>
+guarda un altro negli occhi<br>
+e sceglie comunque il bene…</p>
+
+<p><strong>DIAVOLO</strong><br>
+io perdo forza.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Tutta.</p>
+
+<p><em>(Sorriso più tirato, come una crepa.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+Quindi…<br>
+se volete farmi un favore…</p>
+
+<p><strong>DIAVOLO</strong><br>
+non ascoltatevi troppo.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Non guardatevi dentro.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Non ascoltate gli altri.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Tenete tutto chiuso.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Ben chiuso.</p>
+
+<p><em>(Le luci si restringono su di lui. Sussurro finale.)</em></p>
+
+<p><strong>DIAVOLO</strong><br>
+È così che si spegne la speranza.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Lentamente.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Dolcemente.</p>
+
+<p><strong>DIAVOLO</strong><br>
+Senza che ve ne accorgiate.</p>
+
+<p><em>(Si ritira nell’ombra. Luci spente.)</em></p>
+
+<p><em>(Buio. Battito elettronico profondo.<br>
+Il coro entra ai lati, come un muro di schermi.<br>
+Luci a flash.)</em></p>
+
+</div>
+
+
+ <div class="battuta" data-personaggio="Sorella Povertà"><p><strong>CORO – Tentazioni della società</strong><br>
+<em>(ritmo crescente)</em></p>
+
+<p><strong>CORO</strong><br>
+“Compra, consuma, vivi!”</p>
+
+<p><strong>CORO</strong><br>
+“Sempre di più, mai abbastanza!”</p>
+
+<p><strong>CORO</strong><br>
+“Se non possiedi, non vali!”</p>
+
+<p><strong>CORO</strong><br>
+“La felicità è nello shopping!”</p>
+
+<p><strong>CORO</strong><br>
+“Acquista ora, paga dopo!”</p>
+
+<p><strong>CORO</strong><br>
+“Non fermarti, il tempo è denaro!”</p>
+
+<p><strong>CORO</strong><br>
+“Il successo si misura in oggetti!”</p>
+
+<p><strong>CORO</strong><br>
+“Scorri, clicca, condividi!”</p>
+
+<p><strong>CORO</strong><br>
+“La vita è una storia da postare!”</p>
+
+<p><strong>CORO</strong><br>
+“Sempre online, sempre connessi!”</p>
+
+<p><strong>CORO</strong><br>
+“Like, follow, repeat!”</p>
+
+<p><strong>CORO</strong><br>
+“Più cose, più potere!”</p>
+
+<p><strong>CORO</strong><br>
+“Non respirare, compra!”</p>
+
+<p><strong>CORO</strong><br>
+“Se non compri, sei invisibile!”</p>
+
+<p><strong>CORO</strong><br>
+“Il tuo valore è il tuo carrello!”</p>
+
+<p><em>(Le voci si distorcono, diventano eco, poi si spengono di colpo.)</em></p>
+
+<p><em>(Ogni parola si affievolisce. Francesco è immobile al centro: non ha parlato durante il Diavolo,
+ma ora respira profondamente.)</em></p>
+
+<p><strong>FRANCESCO</strong><br>
+<em>(voce calma, come emergendo dal buio, osservando il coro ancora agitato)</em><br>
+Tutti corrono…<br>
+Tutti cercano…<br>
+Ma chi guarda davvero?</p>
+
+<p><em>(Il coro, a quella frase, si blocca di colpo. Il ronzio si spegne.)</em></p>
+
+<p><em>Entrata di Sorella Povertà</em></p>
+
+<p><em>(Da un lato entra Sorella Povertà. Passo lento, deciso, borsa piccola in spalla.
+La sua presenza è un contrasto netto:
+nessun rumore, nessuna fretta, nessuna pubblicità.)</em></p>
+
+<p><em>(Il Diavolo NON rientra: resta solo come “ombra”, un pensiero sospeso, un residuo nell’aria.
+Alcuni ragazzi del coro lo guardano come se fosse ancora lì ai margini della scena.)</em></p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Non ho bisogno di tutto quello<br>
+che vogliono farmi comprare…</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Ogni giorno scelgo<br>
+cosa davvero conta.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Rinuncio al superfluo…<br>
+perché il peso vero non è nelle cose,</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+ma in ciò che ci trattiene<br>
+dentro questo rumore.</p>
+
+<p><em>(Il coro, scosso dal monologo del Diavolo e illuminato da lei,
+resta sospeso un attimo… poi alcuni ricadono nel vecchio ritmo,
+come se il Diavolo li tirasse ancora:
+gesti da pubblicità, social, scroll compulsivo.)</em></p>
+
+<p><strong>FRANCESCO</strong><br>
+<em>(cammina lentamente intorno a lei, rispettoso;
+la tocca con una mano sulla spalla, un riconoscimento silenzioso)</em><br>
+Sorella Povertà…<br>
+e cosa resta,<br>
+se rinunci al mondo intero?</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+<em>(sorride, libera il gesto verso lo spazio vuoto,
+come allontanando il Diavolo rimasto in aria)</em><br>
+Resta leggerezza.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Resta tempo<br>
+per guardare,<br>
+ascoltare,<br>
+respirare.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Resta spazio<br>
+per chi non ha nulla.</p>
+
+<p><em>(Francesco guarda il pubblico, poi lei.
+L’ombra del Diavolo si ritrae del tutto:
+nel gesto, senza apparire.)</em></p>
+
+<p><strong>FRANCESCO</strong><br>
+<em>(inspira profondamente,
+le braccia che si aprono non per predicare,
+ma per includere)</em><br>
+Hai scelto di stare accanto agli ultimi,<br>
+senza rumore,<br>
+senza proclami…</p>
+
+<p><strong>FRANCESCO</strong><br>
+Non è facile, sai.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+<em>(china il capo,
+poi lo rialza con una piccola fiera dignità)</em><br>
+Non cerco applausi.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Non cerco titoli.</p>
+
+<p><strong>SORELLA POVERTÀ</strong><br>
+Solo un po’ di giustizia<br>
+nel mio piccolo,<br>
+e un cuore libero.</p>
+
+</div>
+
+
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sel = document.getElementById("personaggioSelect");
+    const battute = document.querySelectorAll(".battuta");
+
+    function update() {
+        const val = sel.value;
+        battute.forEach(b => {
+            if(val === "tutti" || b.dataset.personaggio === val){
+                b.style.display = "block";
+            } else {
+                b.style.display = "none";
+            }
+        });
+    }
+    sel.addEventListener("change", update);
+    update();
+});
+</script>
+<footer class="container">
+  <p>© Progetto Teatro — Creato dall'ingeniere </p>
+  <p>⊹₊ ˚‧︵‿₊୨୧₊‿︵‧ ˚ ₊⊹</p>
+
+  <!-- Pulsante per scaricare il copione -->
+  <p>
+    <a href="copione.pdf" download="copione.pdf" class="btn btn-primary">
+      Scarica il copione
+    </a>
+  </p>
+</footer>
+</body>
+</html>
